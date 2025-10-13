@@ -22,7 +22,7 @@ export default function Home() {
       <Innovation />
       <TechTools />
       <OnlinePresence />
-      <Faq />
+      {/* <Faq /> */}
       <Solutions />
     </main>
   )

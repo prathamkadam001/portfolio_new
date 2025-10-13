@@ -10,7 +10,7 @@ export default function Page() {
     return (
         <main>
             <ContactForm/>
-            <Faq/>
+            {/* <Faq/> */}
         </main>
     );
 };
