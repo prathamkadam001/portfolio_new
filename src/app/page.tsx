@@ -9,7 +9,7 @@ import About from "./components/about/about";
 import TechTools from "./components/home/TechTools/TechTools";
 
 export const metadata: Metadata = {
-    title: "Home | Awake Agency",
+    title: "Pratham Kadam | Full Stack Developer",
 };
 
 

@@ -17,7 +17,12 @@ const footerData = {
       {
         icon: "/images/home/footerSocialIcon/instagram.svg",
         dark_icon: "/images/home/footerSocialIcon/instagram_dark.svg",
-        link: "https://www.instagram.com/pratham__kadam1705",
+        link: "https://www.instagram.com/pratham__kadam2103",
+      },
+      {
+        icon: "/images/home/footerSocialIcon/Github.svg",
+        dark_icon: "/images/home/footerSocialIcon/Github.svg",
+        link: "https://github.com/prathamkadam001",
       },
     ],
   },
@@ -34,9 +39,6 @@ const footerData = {
     name: "Other Pages",
     links: [
       { name: "Error 404", url: "/not-found" },
-      { name: "Terms & Conditions", url: "/terms-and-conditions" },
-      { name: "Privacy Policy", url: "/privacy-policy" },
-      { name: "Documentation", url: "/documentation" },
     ],
   },
   contactDetails: {
