@@ -12,7 +12,7 @@ const footerData = {
       {
         icon: "/images/home/footerSocialIcon/linkedin.svg",
         dark_icon: "/images/home/footerSocialIcon/linkedin_dark.svg",
-        link: "https://www.linkedin.com/in/pratham-kadam-6aa34233b/",
+        link: "https://www.linkedin.com/in/pratham-kadam2103",
       },
       {
         icon: "/images/home/footerSocialIcon/instagram.svg",
