@@ -13,7 +13,7 @@ const aboutData = {
     "With experience across both frontend and backend, I craft seamless digital experiences that merge functionality with thoughtful design.",
   description3:
     "When I’m not coding, I like exploring design trends, reading tech blogs, and spending time with friends.",
-  image: "/images/owner/my_image.jpeg", // Replace with your image path
+  image: "/images/owner/my_image.png", // Replace with your image path
 };
 
 export default function AboutSection() {
@@ -28,12 +28,12 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="relative flex-shrink-0"
         >
-          <div className="rounded-xl overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] w-[300px] sm:w-[350px] md:w-[380px] lg:w-[420px]">
+          <div className="rounded-xl overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] w-[300px] sm:w-[350px] md:w-[480px] lg:w-[430px] lg:h-[400px]">
             <Image
               src={aboutData.image}
               alt={aboutData.name}
-              width={420}
-              height={420}
+              width={520}
+              height={520}
               className="object-cover w-full h-full"
               priority
             />
