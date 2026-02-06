@@ -1,9 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { signOut, useSession } from "next-auth/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import HeaderLink from "./Navigation/HeaderLink";
 import { headerData } from "./Navigation/Menudata";
@@ -11,9 +8,7 @@ import MobileHeader from "./Navigation/MobileHeader";
 import ThemeToggler from "./ThemeToggle";
 
 const Header = () => {
-  const { data: session } = useSession();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [user, setUser] = useState<{ user: any } | null>(null);
   const [sticky, setSticky] = useState(false);
   const pathname = usePathname();
 
@@ -23,22 +18,12 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [pathname]);
 
-  // const handleSignOut = () => {
-  //   localStorage.removeItem("user");
-  //   signOut();
-  //   setUser(null);
-  // };
-
-  return (
+    return (
     <>
       <header className={`fixed top-0 z-50 w-full`}>
         <div className="container p-3">

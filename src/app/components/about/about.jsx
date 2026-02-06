@@ -13,7 +13,7 @@ const aboutData = {
     "With experience across both frontend and backend, I craft seamless digital experiences that merge functionality with thoughtful design.",
   description3:
     "When I’m not coding, I like exploring design trends, reading tech blogs, and spending time with friends.",
-  image: "/images/owner/my_image.png", // Replace with your image path
+  image: "/images/owner/pratham_image.png",
 };
 
 export default function AboutSection() {

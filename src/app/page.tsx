@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Faq from "./components/home/faq";
 import HeroSection from "./components/home/hero";
 import Innovation from "./components/home/innovation";
 import OnlinePresence from "./components/home/online-presence";
@@ -22,7 +21,6 @@ export default function Home() {
       <Innovation />
       <TechTools />
       <OnlinePresence />
-      {/* <Faq /> */}
       <Solutions />
     </main>
   )
