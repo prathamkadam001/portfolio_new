@@ -11,5 +11,6 @@ export default function Home() {
       <Projects />
       <Solutions />
     </main>
+    
   );
 }
