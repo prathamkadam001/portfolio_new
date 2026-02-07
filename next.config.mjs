@@ -9,6 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  turbopack: {}, // 👈 this tells Next "yes I want Turbopack"
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
