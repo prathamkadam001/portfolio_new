@@ -12,7 +12,7 @@ const footerData = {
       {
         icon: "/images/home/footerSocialIcon/linkedin.svg",
         dark_icon: "/images/home/footerSocialIcon/linkedin_dark.svg",
-        link: "https://www.linkedin.com/in/pratham-kadam2103",
+        link: "https://www.linkedin.com/in/pratham-kadam-fullstack-developer/",
       },
       {
         icon: "/images/home/footerSocialIcon/instagram.svg",
@@ -30,7 +30,7 @@ const footerData = {
     name: "Sitemap",
     links: [
       { name: "About us", url: "/#aboutus" },
-      { name: "Work", url: "/#work" },
+      { name: "Work", url: "/my-work" },
       { name: "Services", url: "/#services" },
       { name: "Contact us", url: "/contact" },
     ],
@@ -44,10 +44,10 @@ const footerData = {
   contactDetails: {
     name: "Contact Details",
     address: "Ahmedabad, Gujarat, India",
-    email: "prathamkadam0001@gmail.com",
+    email: "prathamkadam.dev@gmail.com",
     phone: "+91 8128293873",
   },
-  copyright: "©2025 Pratham kadam. All Rights Reserved",
+  copyright: "©2026 Pratham kadam. All Rights Reserved",
 };
 
 export const GET = async () => {

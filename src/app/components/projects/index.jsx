@@ -774,7 +774,12 @@ const projects = [
     category: "management",
     image: "/images/projects/OnlineExaminationPortal.png",
     description: "Online Examination Portal",
-    tags: ["Student Management", "Online Examination", "Next.js", "Certificates"],
+    tags: [
+      "Student Management",
+      "Online Examination",
+      "Next.js",
+      "Certificates",
+    ],
     link: "https://exam.globalitinfosolution.com/",
   },
 ];
@@ -854,7 +859,7 @@ export default function ProjectsSection() {
         project.title.toLowerCase().includes(search.toLowerCase()) ||
         project.description.toLowerCase().includes(search.toLowerCase()) ||
         project.tags.some((tag) =>
-          tag.toLowerCase().includes(search.toLowerCase())
+          tag.toLowerCase().includes(search.toLowerCase()),
         );
       return matchCategory && matchSearch;
     });
@@ -898,19 +903,19 @@ export default function ProjectsSection() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <div className="relative -mt-8">
+                <div className="relative md:-mt-8 mt-8">
                   <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 dark:from-gray-100 dark:via-blue-200 dark:to-gray-100 bg-clip-text text-transparent">
                       Project
                     </span>
-                    <span className="block md:inline md:ml-3 text-blue-600 dark:text-blue-400 relative">
+                    <span className="inline md:ml-3 ml-3 text-blue-600 dark:text-blue-400 relative">
                       Showcase
                     </span>
                   </h1>
                 </div>
                 <motion.div
                   variants={itemVariants}
-                  className="flex items-center justify-center gap-6 -mt-6"
+                  className="flex items-center justify-center gap-6 md:-mt-6 mt-6"
                 >
                   <motion.div
                     initial={{ width: 0 }}
@@ -1071,17 +1076,19 @@ export default function ProjectsSection() {
                         : "h-56"
                     }`}
                   >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className={`w-full h-full object-cover transition-transform duration-700 ${
-                        hoveredProject === project.id
-                          ? "scale-110"
-                          : "scale-100"
-                      }`}
-                    />
+                    <Link href={project.link}>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={600}
+                        height={400}
+                        className={`w-full h-full object-cover transition-transform duration-700 ${
+                          hoveredProject === project.id
+                            ? "scale-110"
+                            : "scale-100"
+                        }`}
+                      />
+                    </Link>
 
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
