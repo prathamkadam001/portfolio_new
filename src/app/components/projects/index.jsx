@@ -962,7 +962,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         {/* Search and Filter Bar */}
-        <div className="sticky top-4 z-10 mb-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-2xl p-4 shadow-lg border border-gray-200 dark:border-gray-800">
+        <div className="sticky top-4 z-10 mb-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-xl p-4 shadow-lg border border-gray-200 dark:border-gray-800">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="relative flex-1 max-w-2xl">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-5 h-5" />
@@ -1016,7 +1016,7 @@ export default function ProjectsSection() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`group relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`group relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                   activeCategory === category.id
                     ? "bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-500 dark:to-cyan-500 text-white shadow-lg shadow-blue-500/25 dark:shadow-blue-500/20"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
@@ -1026,7 +1026,7 @@ export default function ProjectsSection() {
                 {activeCategory === category.id && (
                   <motion.div
                     layoutId="activeCategory"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-500 dark:to-cyan-500 -z-10"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-500 dark:to-cyan-500 -z-10"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -1064,7 +1064,7 @@ export default function ProjectsSection() {
                   }}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className={`group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 hover:-translate-y-2 ${
+                  className={`group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 hover:-translate-y-2 ${
                     viewMode === "list" ? "flex flex-col md:flex-row" : ""
                   }`}
                 >

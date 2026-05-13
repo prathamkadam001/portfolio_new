@@ -28,7 +28,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="relative flex-shrink-0"
         >
-          <div className="rounded-xl overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] w-[300px] sm:w-[350px] md:w-[480px] lg:w-[430px] lg:h-[400px]">
+          <div className="rounded-xl overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] w-[300px] sm:w-[350px] md:w-[480px] lg:w-[430px] lg:h-[450px]">
             <Image
               src={aboutData.image}
               alt={aboutData.name}

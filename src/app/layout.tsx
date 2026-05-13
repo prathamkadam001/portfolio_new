@@ -26,7 +26,7 @@ export default function RootLayout({
             {/* ---------------------Footer Starts-----------------  */}
             <Footer />
             {/* ---------------------Footer Ends-----------------  */}
-            <ScrollToTop />
+            <ScrollToTop />   
           </ThemeProvider>
         </SessionProvider>
       </body>
