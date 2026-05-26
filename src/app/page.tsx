@@ -6,9 +6,23 @@ import Solutions from "./components/home/solution";
 import WebResult from "./components/home/web-result";
 import About from "./components/about/about";
 import TechTools from "./components/home/TechTools/TechTools";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-    title: "Pratham Kadam | Full Stack Developer",
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: "/",
+  },
+  twitter: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
 };
 
 

@@ -1,136 +1,117 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import StarRating from "../../shared/star-rating";
+"use client"
+
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { ArrowUpRight, CheckCircle2, MapPin, MessageCircle } from "lucide-react"
+import { heroHighlights, siteConfig, trustMetrics } from "@/lib/site"
+import PortfolioScene from "./PortfolioScene"
+
+const fadeUp = {
+  initial: { y: 28, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+}
 
 function HeroSection() {
-  const ref = useRef(null);
-  const [avatarList, setAvatarList] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api/page-data");
-        if (!res.ok) throw new Error("Failed to fetch");
-        const data = await res.json();
-        setAvatarList(data);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const bottomAnimation = {
-    initial: { y: "20%", opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    transition: { duration: 1, delay: 0.8 },
-  };
-
   return (
-    <section>
-      <div className="relative w-full pt-44 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-blue_gradient before:via-white before:to-yellow_gradient before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-dark_blue_gradient dark:before:via-black dark:before:to-dark_yellow_gradient dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10">
-        <div className="container relative z-10">
-          <div ref={ref} className="flex flex-col gap-8">
-            {/* ---------------- heading text --------------- */}
-            <motion.div
-              {...bottomAnimation}
-              className="relative flex flex-col text-center items-center gap-4"
-            >
-              <h1 className="font-medium w-full">
-                I build the bridge where design walks
-                <span className="instrument-font italic font-normal dark:text-white/70">
-                  {" "}
-                  into code
-                </span>
-              </h1>
-              <p className="max-w-38 text-dark_black/60 dark:text-white/60">
-                I&apos;m Pratham, blending design and technology to build intuitive,
-                scalable experiences — and always experimenting with new ideas.
-              </p>
-            </motion.div>
+    <section className="relative isolate min-h-[92vh] overflow-hidden bg-[#f7fbff] pt-[8rem] text-slate-950 dark:bg-[#06101f] dark:text-white">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_20%,rgba(20,184,166,0.22),transparent_28%),radial-gradient(circle_at_78%_8%,rgba(247,178,103,0.2),transparent_25%),linear-gradient(135deg,#f8fafc_0%,#eef9ff_48%,#fff7ed_100%)] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_78%_12%,rgba(247,178,103,0.16),transparent_28%),linear-gradient(135deg,#06101f_0%,#081a2e_52%,#142014_100%)]" />
+      <div className="absolute inset-y-0 right-0 -z-10 hidden w-[58%] opacity-80 lg:block">
+        <PortfolioScene />
+      </div>
 
-            <motion.div
-              {...bottomAnimation}
-              className="flex flex-col items-center justify-center gap-4"
-            >
-              <div className="flex flex-col items-center justify-center gap-8 w-full sm:flex-row">
-                {/* ----------- Get started Link -------------- */}
-                <Link
-                  href="/contact"
-                  className="group bg-purple_blue text-white font-medium flex flex-row justify-between items-center py-2 px-5 rounded-full max-w-64 w-full md:py-3 border border-purple_blue transition-all duration-200 ease-in-out hover:bg-transparent hover:text-purple_blue"
-                >
-                  <span className="flex text-start transform transition-transform duration-200 ease-in-out group-hover:translate-x-28">
-                    Get Started
-                  </span>
-                  <svg
-                    width="40"
-                    height="40"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transform transition-transform duration-200 ease-in-out group-hover:-translate-x-44 group-hover:rotate-45"
-                  >
-                    <rect
-                      width="40"
-                      height="40"
-                      rx="20"
-                      className="fill-white transition-colors duration-200 ease-in-out group-hover:fill-purple_blue"
-                    />
-                    <path
-                      d="M15.832 15.3334H24.1654V23.6667"
-                      className="stroke-[#1B1D1E] transition-colors duration-200 ease-in-out group-hover:stroke-white"
-                      strokeWidth="1.66667"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M15.832 23.6667L24.1654 15.3334"
-                      className="stroke-[#1B1D1E] transition-colors duration-500 ease-in-out group-hover:stroke-white"
-                      strokeWidth="1.66667"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link>
+      <div className="container relative z-10 grid min-h-[calc(92vh-8rem)] items-center gap-10 pb-16 lg:grid-cols-[1.02fr_0.98fr]">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{ staggerChildren: 0.12 }}
+          className="max-w-4xl"
+        >
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-900/10 bg-white/70 px-3 py-2 text-sm font-medium text-slate-700 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-slate-200"
+          >
+            <MapPin className="size-4 text-teal-600 dark:text-teal-300" />
+            {siteConfig.location} - Remote projects accepted
+          </motion.div>
 
-                {/* --------------- avatar division -------------- */}
-                <div className="flex items-center gap-7">
-                  <ul className="avatar flex flex-row items-center">
-                    {avatarList?.avatarList?.map((items: any, index: any) => (
-                      <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
-                        <Image
-                          src={items.image}
-                          alt="Image"
-                          width={44}
-                          height={44}
-                          quality={100}
-                          className="rounded-full border-2 border-white"
-                          unoptimized={true}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                  {/* -------------- Star rating division --------------- */}
-                  <div className="gap-1 flex flex-col">
-                    <div>
-                      <StarRating count={4} color="#F59E0B" />
-                    </div>
-                    <p className="text-sm font-normal text-dark_black/60 dark:text-white/60">
-                      Trusted by 1000+ clients
-                    </p>
-                  </div>
-                </div>
+          <motion.h1
+            variants={fadeUp}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-7 max-w-4xl text-4xl font-semibold leading-none tracking-normal text-slate-950 dark:text-white sm:text-5xl md:text-6xl"
+          >
+            Freelance full stack developer for websites that rank, load fast,
+            and win clients.
+          </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-7 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300"
+          >
+            I build SEO-friendly business websites, custom web apps, and
+            e-commerce experiences with Next.js, React, Node.js, MongoDB, and a
+            conversion-first structure.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-9 flex flex-col gap-3 sm:flex-row"
+          >
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            >
+              <MessageCircle className="size-5" />
+              Book a project call
+            </Link>
+            <Link
+              href="/my-work"
+              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white/70 px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
+            >
+              See client work
+              <ArrowUpRight className="size-5" />
+            </Link>
+          </motion.div>
+
+          <motion.ul
+            variants={fadeUp}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-8 grid gap-3 text-sm text-slate-700 dark:text-slate-300 sm:grid-cols-2"
+          >
+            {heroHighlights.map((highlight) => (
+              <li key={highlight} className="flex items-center gap-2">
+                <CheckCircle2 className="size-4 text-teal-600 dark:text-teal-300" />
+                {highlight}
+              </li>
+            ))}
+          </motion.ul>
+        </motion.div>
+
+        <div className="relative min-h-[360px] lg:min-h-[560px]">
+          <div className="absolute inset-0 lg:hidden">
+            <PortfolioScene />
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 grid gap-3 sm:grid-cols-3 lg:left-auto lg:w-[88%]">
+            {trustMetrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-lg border border-white/70 bg-white/70 p-4 shadow-sm backdrop-blur dark:border-white/10 dark:bg-slate-950/40"
+              >
+                <p className="text-3xl font-semibold text-slate-950 dark:text-white">
+                  {metric.value}
+                </p>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                  {metric.label}
+                </p>
               </div>
-            </motion.div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default HeroSection;
+export default HeroSection

@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "Pratham Kadam",
   shortName: "Pratham Kadam",
   role: "Freelance Full Stack Developer",
-  title: "Pratham Kadam | Freelance Full Stack Developer",
+  title: "Pratham Kadam | Freelance Full Stack Developer in Ahmedabad",
   description:
-    "Freelance Full Stack Developer in Ahmedabad, India building SEO-friendly business websites, custom web apps, and e-commerce solutions with Next.js, React, Node.js, and MongoDB.",
+    "Hire Pratham Kadam, a freelance full stack developer in Ahmedabad, India, for SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO with Next.js, React, Node.js, and MongoDB.",
   url: "https://prathamkadam.netlify.app",
   locale: "en_IN",
   email: "prathamkadam.dev@gmail.com",
@@ -25,6 +25,10 @@ export const siteConfig = {
     "custom web application development",
     "e-commerce website development",
     "technical SEO for websites",
+    "freelance web developer India",
+    "hire Next.js developer India",
+    "portfolio website developer",
+    "website redesign developer Ahmedabad",
   ],
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/pratham-kadam-fullstack-developer/",
@@ -345,16 +349,16 @@ export const featuredProjects = [
 ]
 
 export const heroHighlights = [
-  "Business websites",
-  "Custom web apps",
-  "E-commerce builds",
-  "Technical SEO setup",
+  "SEO-ready business websites",
+  "Custom dashboards and web apps",
+  "E-commerce and product catalogs",
+  "Technical SEO and speed cleanup",
 ]
 
 export const trustMetrics = [
-  { value: featuredProjects.length.toString(), label: "Featured projects" },
-  { value: serviceOfferings.length.toString(), label: "Core services" },
-  { value: "4", label: "Primary stack areas" },
+  { value: "14+", label: "projects shipped" },
+  { value: "13+", label: "clients served" },
+  { value: serviceOfferings.length.toString(), label: "service tracks" },
 ]
 
 export const footerData = {

@@ -1,19 +1,23 @@
 
 
-import Link from 'next/link';
-import { HeaderItem } from '../../../../types/menu';
+import Link from "next/link"
+import { HeaderItem } from "../../../../types/menu"
 
-const MobileHeader: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const MobileHeader: React.FC<{
+  item: HeaderItem
+  onNavigate?: () => void
+}> = ({ item, onNavigate }) => {
+  return (
+    <li>
+      <Link
+        href={item.href}
+        onClick={onNavigate}
+        className="block rounded-lg px-4 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:text-white dark:hover:bg-white/10"
+      >
+        {item.label}
+      </Link>
+    </li>
+  )
+}
 
-    return (
-        <>
-            <Link href={item.href} className="text-black hover:text-opacity-50 dark:text-white dark:hover:text-opacity-50 rounded-md text-base font-medium ">
-                <li className={`rounded-md w-full p-2 px-4`}>
-                    {item.label}
-                </li>
-            </Link>
-        </>
-    );
-};
-
-export default MobileHeader;
+export default MobileHeader

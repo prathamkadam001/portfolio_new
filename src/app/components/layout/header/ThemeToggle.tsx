@@ -1,21 +1,21 @@
-'use client'
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { useTheme } from "next-themes";
+"use client"
+
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 
 const ThemeToggler = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
   return (
     <button
-      aria-label="theme toggler"
+      type="button"
+      aria-label="Toggle theme"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="group flex h-8 w-8 items-center justify-center duration-300"
+      className="grid size-10 place-items-center rounded-lg border border-slate-900/10 text-slate-950 transition hover:bg-white dark:border-white/10 dark:text-white dark:hover:bg-white/10"
     >
-      <span className="group-hover:rotate-180 transition-transform duration-700 ease-in-out">
-        <Icon icon="ri:sun-fill" width="24" height="24" className="hidden dark:block"/>
-        <Icon icon="ri:moon-fill" width="24" height="24" className="dark:hidden" style={{ color: '#000' }} />
-      </span>
+      <Sun className="hidden size-5 dark:block" />
+      <Moon className="size-5 dark:hidden" />
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggler;
+export default ThemeToggler

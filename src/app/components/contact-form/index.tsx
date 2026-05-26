@@ -1,265 +1,253 @@
-"use client";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import Link from "next/link";
-import { useState } from "react";
+"use client"
+
+import Link from "next/link"
+import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react"
+import { useState } from "react"
+import { siteConfig } from "@/lib/site"
+
+type FormData = {
+  name: string
+  email: string
+  interest: string
+  phone: string
+  message: string
+}
+
+const initialFormData: FormData = {
+  name: "",
+  email: "",
+  interest: "",
+  phone: "",
+  message: "",
+}
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    interest: "",
-    phone: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loader, setLoader] = useState(false);
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
+  const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [submitted, setSubmitted] = useState(false)
+  const [loader, setLoader] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const reset = () => {
-    formData.name = "";
-    formData.email = "";
-    formData.interest = "";
-    formData.phone = "";
-    formData.message = "";
-  };
-
-  const handleSubmit = async (e: any) => {
-  e.preventDefault();
-  setLoader(true);
-
-  try {
-    const response = await fetch("https://formsubmit.co/ajax/prathamkadam0001@gmail.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        name: formData.name,
-        email: formData.email,
-        interest: formData.interest,
-        phone: formData.phone,
-        message: formData.message,
-        _subject: "New Contact Form Submission",
-      }),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setSubmitted(true);
-      reset();
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  } finally {
-    setLoader(false);
+      [name]: name === "phone" ? value.replace(/\D/g, "").slice(0, 10) : value,
+    }))
   }
-};
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setLoader(true)
+    setError("")
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/prathamkadam0001@gmail.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            ...formData,
+            _subject: "New portfolio project enquiry",
+            _template: "table",
+          }),
+        },
+      )
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        setFormData(initialFormData)
+      } else {
+        setError("Something went wrong. Please email me directly.")
+      }
+    } catch {
+      setError("Something went wrong. Please email me directly.")
+    } finally {
+      setLoader(false)
+    }
+  }
 
   return (
-    <section>
-      <div className="relative w-full pt-44 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-blue_gradient before:via-white before:to-yellow_gradient dark:before:from-dark_blue_gradient dark:before:via-black dark:before:to-dark_yellow_gradient dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10 before:rounded-full before:top-24 before:blur-3xl  before:-z-10">
-        <div className="container relative z-10">
-          <div className="flex flex-col gap-10 md:gap-20">
-            <div className="relative flex flex-col text-center items-center">
-              <h2 className="font-medium w-full max-w-32">
-                Love to hear from you, Get in
-                <span className="instrument-font italic font-normal dark:text-white/70">
-                  {" "}
-                  touch
-                </span>
-              </h2>
-            </div>
-            {submitted ? (
-              <div className="flex flex-col items-center gap-5 text-center max-w-xl mx-auto p-6 rounded-lg bg-green/20 dark:bg-white/5">
-                <div className="flex">
-                  <Icon
-                    icon="ix:success-filled"
-                    width="30"
-                    height="30"
-                    style={{ color: "#79D45E" }}
-                  />
-                  <h5 className="text-green dark:text-green">
-                    Great!!! Email has been Successfully Sent. We will get in
-                    touch asap.
-                  </h5>
-                </div>
+    <section className="bg-[#f7fbff] pt-36 pb-20 dark:bg-[#06101f]">
+      <div className="container">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
+              Hire Pratham
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
+              Tell me about your website, app, or SEO goal.
+            </h1>
+            <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">
+              Share what you need, what is currently blocking you, and how soon
+              you want to launch. I will reply with the best next step.
+            </p>
 
-                <Link
-                  href="/"
-                  className="group w-fit text-black font-medium bg-transparent dark:bg-white/20 dark:hover:bg-white rounded-full flex items-center gap-4 py-2 pl-5 pr-2 hover:bg-transparent border border-dark_black"
+            <div className="mt-8 grid gap-3">
+              <Link
+                href={`mailto:${siteConfig.email}`}
+                className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+              >
+                <Mail className="size-5 text-teal-700 dark:text-teal-300" />
+                {siteConfig.email}
+              </Link>
+              <Link
+                href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+              >
+                <Phone className="size-5 text-teal-700 dark:text-teal-300" />
+                {siteConfig.phone}
+              </Link>
+              <div className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+                <MapPin className="size-5 text-teal-700 dark:text-teal-300" />
+                {siteConfig.location}
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-slate-900/10 bg-white p-6 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-[#0a1728] md:p-8">
+            {submitted ? (
+              <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
+                <MessageCircle className="size-12 text-teal-700 dark:text-teal-300" />
+                <h2 className="mt-5 text-3xl font-semibold text-slate-950 dark:text-white">
+                  Message sent successfully.
+                </h2>
+                <p className="mt-3 max-w-md text-slate-700 dark:text-slate-300">
+                  Thank you. I will review your project details and get back to
+                  you as soon as possible.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-8 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white dark:bg-white dark:text-slate-950"
                 >
-                  <span className="group-hover:translate-x-9 group-hover:dark:text-dark_black dark:text-white transform transition-transform duration-200 ease-in-out">
-                    Back to home
-                  </span>
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="group-hover:-translate-x-[125px] transition-all duration-200 ease-in-out group-hover:rotate-45"
-                  >
-                    <rect
-                      width="32"
-                      height="32"
-                      rx="16"
-                      fill="white"
-                      className=" transition-colors duration-200 ease-in-out fill-black"
-                    />
-                    <path
-                      d="M11.832 11.3334H20.1654M20.1654 11.3334V19.6668M20.1654 11.3334L11.832 19.6668"
-                      stroke="#1B1D1E"
-                      strokeWidth="1.42857"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className=" transition-colors duration-200 ease-in-out stroke-white"
-                    />
-                  </svg>
-                </Link>
+                  Send another enquiry
+                </button>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col bg-white dark:bg-dark_black rounded-2xl p-8 gap-8"
-              >
-                <div className="flex flex-col md:flex md:flex-row gap-6">
-                  <div className="w-full">
-                    <label htmlFor="name">Your Name</label>
+              <form onSubmit={handleSubmit} className="grid gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="font-semibold text-slate-800 dark:text-white"
+                    >
+                      Your name
+                    </label>
                     <input
-                      className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
-                                                focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40"
+                      className="mt-2 w-full rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white"
                       id="name"
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
+                      required
                     />
                   </div>
-                  <div className="w-full">
-                    <label htmlFor="email">Your Email</label>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="font-semibold text-slate-800 dark:text-white"
+                    >
+                      Email address
+                    </label>
                     <input
-                      className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
-                                                focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40"
+                      className="mt-2 w-full rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white"
                       id="email"
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Enter your email"
+                      placeholder="you@example.com"
+                      required
                     />
                   </div>
                 </div>
-                <div className="flex flex-col md:flex md:flex-row gap-6">
-                  <div className="w-full">
-                    <label htmlFor="interest">
-                      What are you interested in?
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="interest"
+                      className="font-semibold text-slate-800 dark:text-white"
+                    >
+                      Project type
                     </label>
                     <input
-                      className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
-                                                focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40"
+                      className="mt-2 w-full rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white"
                       id="interest"
                       type="text"
                       name="interest"
                       value={formData.interest}
                       onChange={handleChange}
-                      placeholder="Enter your interest"
+                      placeholder="Website, app, SEO, e-commerce"
+                      required
                     />
                   </div>
-                  <div className="w-full">
-                    <label htmlFor="budget">Phone Number</label>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="font-semibold text-slate-800 dark:text-white"
+                    >
+                      Phone number
+                    </label>
                     <input
-                      className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
-             focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40"
+                      className="mt-2 w-full rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white"
                       id="phone"
-                      type="text"
+                      type="tel"
                       name="phone"
                       value={formData.phone}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        if (/^\d{0,10}$/.test(value)) {
-                          handleChange(e);
-                        }
-                      }}
-                      placeholder="Enter your phone number"
-                      maxLength={10}
+                      onChange={handleChange}
+                      placeholder="10 digit mobile number"
                       inputMode="numeric"
                     />
                   </div>
                 </div>
-                <div className="w-full">
-                  <label htmlFor="message">Message</label>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="font-semibold text-slate-800 dark:text-white"
+                  >
+                    Project details
+                  </label>
                   <textarea
-                    className="w-full mt-2 rounded-3xl border px-5 py-3 outline-hidden transition dark:border-white/20
-                                        focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40"
+                    className="mt-2 w-full rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 text-slate-950 outline-none transition focus:border-teal-600 dark:border-white/10 dark:bg-white/5 dark:text-white"
                     name="message"
                     id="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Let tell us know your project about"
-                    rows={4}
+                    placeholder="Tell me what you want to build or improve."
+                    rows={6}
+                    required
                   />
                 </div>
-                <div>
-                  {!loader ? (
-                    <button
-                      type="submit"
-                      className="group w-fit text-white dark:text-dark_black font-medium bg-dark_black dark:bg-white rounded-full flex items-center gap-4 py-2 pl-5 pr-2 transition-all duration-200 ease-in-out  hover:bg-transparent border hover:text-dark_black border-dark_black"
-                    >
-                      <span className="transform transition-transform duration-200 ease-in-out group-hover:translate-x-10">
-                        Let’s Collaborate
-                      </span>
-                      <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="transform transition-transform duration-200 ease-in-out group-hover:-translate-x-36 group-hover:rotate-45"
-                      >
-                        <rect
-                          width="32"
-                          height="32"
-                          rx="16"
-                          fill="white"
-                          className="fill-white dark:fill-black transition-colors duration-200 ease-in-out group-hover:fill-black "
-                        />
-                        <path
-                          d="M11.832 11.3334H20.1654M20.1654 11.3334V19.6668M20.1654 11.3334L11.832 19.6668"
-                          stroke="#1B1D1E"
-                          strokeWidth="1.42857"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="stroke-dark_black dark:stroke-white transition-colors duration-200 ease-in-out group-hover:stroke-white"
-                        />
-                      </svg>
-                    </button>
-                  ) : (
-                    <button className="bg-grey item-center flex gap-2 py-3 px-7 rounded-sm">
-                      <div
-                        className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full dark:text-blue-500"
-                        role="status"
-                        aria-label="loading"
-                      >
-                        <span className="sr-only">Loading...</span>
-                      </div>{" "}
-                      Submitting
-                    </button>
-                  )}
-                </div>
+
+                {error && (
+                  <p className="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700 dark:bg-red-500/10 dark:text-red-200">
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loader}
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+                >
+                  <Send className="size-5" />
+                  {loader ? "Sending..." : "Send project enquiry"}
+                </button>
               </form>
             )}
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default ContactForm;
+export default ContactForm

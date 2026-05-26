@@ -1,85 +1,97 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowUpRight, Code2, Layers3, SearchCheck } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
-const aboutData = {
-  name: "Pratham Kadam",
-  age: 18,
-  title: "Full Stack Developer",
-  description1:
-    "I’m a passionate web developer focused on building efficient, scalable, and user-friendly applications. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.",
-  description2:
-    "With experience across both frontend and backend, I craft seamless digital experiences that merge functionality with thoughtful design.",
-  description3:
-    "When I’m not coding, I like exploring design trends, reading tech blogs, and spending time with friends.",
-  image: "/images/owner/pratham_image.png",
-};
+const strengths = [
+  {
+    title: "Full stack delivery",
+    description:
+      "Frontend, backend, APIs, dashboards, forms, database flows, and launch support handled together.",
+    icon: Code2,
+  },
+  {
+    title: "SEO-first structure",
+    description:
+      "Pages are planned around search intent, semantic headings, metadata, schema, and internal links.",
+    icon: SearchCheck,
+  },
+  {
+    title: "Modern product UI",
+    description:
+      "Clean interfaces with motion, responsive layouts, and practical user flows clients can trust.",
+    icon: Layers3,
+  },
+];
 
 export default function AboutSection() {
   return (
-    <section className="bg-gray-100 dark:bg-[#0d0d0d]  text-white py-20 px-6 md:px-10 lg:px-20">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        {/* Left Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative flex-shrink-0"
-        >
-          <div className="rounded-xl overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] w-[300px] sm:w-[350px] md:w-[480px] lg:w-[430px] lg:h-[450px]">
-            <Image
-              src={aboutData.image}
-              alt={aboutData.name}
-              width={520}
-              height={520}
-              className="object-cover w-full h-full"
-              priority
-            />
+    <section className="bg-[#eef7f6] py-20 dark:bg-[#081626]">
+      <div className="container">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(20,184,166,0.25),rgba(247,178,103,0.22))] blur-2xl" />
+            <div className="relative overflow-hidden rounded-lg border border-white/70 bg-white p-3 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-white/5">
+              <Image
+                src="/images/owner/pratham_image.png"
+                alt="Pratham Kadam, freelance full stack developer in Ahmedabad"
+                width={760}
+                height={820}
+                className="aspect-[4/5] w-full rounded-md object-cover"
+                priority
+              />
+            </div>
           </div>
-        </motion.div>
 
-        {/* Right Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex-1"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-blue-500 pl-4">
-            About Me
-          </h2>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
+              About Pratham
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
+              A developer who thinks about clients, not only components.
+            </h2>
+            <div className="mt-6 space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300">
+              <p>
+                I am {siteConfig.name}, a freelance full stack developer from
+                Ahmedabad. I build business websites, custom web apps, and
+                e-commerce experiences for founders, agencies, institutes, and
+                growing companies.
+              </p>
+              <p>
+                My focus is simple: make the website easy for Google to
+                understand, easy for visitors to trust, and easy for clients to
+                contact you.
+              </p>
+            </div>
 
-          <p className="dark:text-gray-300 text-gray-500 mb-4 leading-relaxed">
-            Hi, I’m{" "}
-            <span className="font-semibold dark:text-white text-black">{aboutData.name}</span>,
-            a {aboutData.age}-year-old {aboutData.title}.
-          </p>
+            <div className="mt-8 grid gap-4">
+              {strengths.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-4 rounded-lg border border-slate-900/10 bg-white/70 p-5 dark:border-white/10 dark:bg-white/5"
+                >
+                  <item.icon className="mt-1 size-6 shrink-0 text-teal-700 dark:text-teal-300" />
+                  <div>
+                    <h3 className="text-xl font-semibold text-slate-950 dark:text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-slate-700 dark:text-slate-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-          <p className="dark:text-gray-400 text-gray-500 mb-4 leading-relaxed">
-            {aboutData.description1}
-          </p>
-
-          <p className="dark:text-gray-400 text-gray-500 mb-4 leading-relaxed">
-            {aboutData.description2}
-          </p>
-
-          <p className="dark:text-gray-400 text-gray-500 leading-relaxed">
-            {aboutData.description3}
-          </p>
-
-          {/* Button */}
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            href="#contact"
-            className="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md transition-all"
-          >
-            Get in Touch
-          </motion.a>
-        </motion.div>
+            <Link
+              href="/services"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            >
+              Explore services
+              <ArrowUpRight className="size-5" />
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,104 +1,101 @@
-'use client'
-import Image from 'next/image'
-import CountUp from 'react-countup'
-import { useInView } from 'react-intersection-observer'
-import { useEffect, useState } from 'react'
+import Link from "next/link"
+import { ArrowUpRight, Gauge, Search, ShieldCheck } from "lucide-react"
+import { serviceCards, siteConfig, trustMetrics } from "@/lib/site"
+
+const resultPillars = [
+  {
+    title: "Search structure",
+    description:
+      "Clean headings, metadata, schema, sitemap, internal links, and keyword-focused service pages.",
+    icon: Search,
+  },
+  {
+    title: "Speed and UX",
+    description:
+      "Responsive layouts, lighter content delivery, clear calls to action, and performance-aware implementation.",
+    icon: Gauge,
+  },
+  {
+    title: "Business trust",
+    description:
+      "Project proof, direct contact details, service clarity, and copy that explains what a client gets.",
+    icon: ShieldCheck,
+  },
+]
 
 function WebResult() {
-  const [data, setData] = useState<any>(null);
-
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  })
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/page-data')
-        if (!res.ok) throw new Error('Failed to fetch')
-
-        const data = await res.json()
-        setData(data?.WebResultTagList)
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
-
   return (
-    <section id='aboutus'>
-      <div className='2xl:py-20 py-11'>
-        <div className='container'>
-          <div className='flex flex-col  lg:gap-16 gap-5'>
-            
-            <div className='flex flex-col items-center justify-center text-center gap-3'>
-               <div className='flex justify-center text-center py-4 relative'>
-              <p
-                className='relative px-2 text-dark_black/60 dark:text-white/60
-                    md:before:absolute md:before:right-[-150px] md:before:top-1/2 md:before:h-0.5 md:before:w-36 md:before:bg-linear-to-r md:before:from-gray-800 dark:md:before:from-gray-300 dark:md:before:opacity-100 md:before:opacity-10 md:before:to-transparent md:after:absolute md:after:left-[-150px] md:after:top-1/2 md:after:h-0.5 md:after:w-36 md:after:bg-linear-to-l md:after:from-gray-800 dark:md:after:from-gray-300 md:after:opacity-10 dark:md:after:opacity-100 md:after:to-transparent'>
-                Loved by 1000+ big and small brands around the worlds
-              </p>
-            </div>
-              <h2 className='max-w-6xl'>
-                Crafting exceptional, well experienced & technology driven
-                strategies to drive impactful results with
-              </h2>
-              <div>
-                <h2>
-                  {data?.map((items:any, index:any) => (
-                    <span
-                      key={index}
-                      className={`inline-flex m-2 py-1 px-5 gap-3 rounded-full ${items.bg_color} ${items.txt_color} items-center`}>
-                      <Image
-                        src={items.image}
-                        alt={items.name}
-                        width={40}
-                        height={40}
-                        style={{ width: 'auto', height: 'auto' }}
-                      />
-                      <span className='instrument-font italic font-normal'>
-                        {items.name}
-                      </span>
-                    </span>
-                  ))}
-                </h2>
-              </div>
-            </div>
-            <div className='flex-col md:flex md:flex-row justify-center items-center text-center'>
-              <div className='relative 2xl:px-24 px-16 md:py-8 py-4'>
-                <h2 ref={ref} className='2xl:text-9xl md:text-7xl text-5xl'>
-                  <sup>+</sup>
-                  {inView ? <CountUp start={0} end={14} duration={3} /> : '0'}
-                </h2>
-                <p className='mt-2 text-dark_black/60 dark:text-white/60'>
-                  Total Projects Completed
-                </p>
-                <div className='hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 h-28 w-px bg-dark_black/10 dark:bg-white/10' />
-              </div>
-              <div className='relative 2xl:px-24 px-16 md:py-8 py-4'>
-                <h2 className='2xl:text-9xl md:text-7xl text-5xl'>
-                  <sup>+</sup>
-                  {inView ? <CountUp start={0} end={13} duration={3} /> : '0'}
-                </h2>
-                <p className='mt-2 text-dark_black/60 dark:text-white/60'>
-                  Happy Clients
-                </p>
-                <div className='hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 h-28 w-px bg-dark_black/10 dark:bg-white/10' />
-              </div>
-              <div className='relative 2xl:px-24 px-16 md:py-8 py-4'>
-                <h2 className='2xl:text-9xl md:text-7xl text-5xl'>
-                  <sup>+</sup>
-                  {inView ? <CountUp start={0} end={20} duration={3} /> : '0'}
-                </h2>
-                <p className='mt-2 text-dark_black/60 dark:text-white/60'>
-                  Positive Feedback
-                </p>
-              </div>
-            </div>
+    <section id="aboutus" className="bg-white py-20 dark:bg-[#07111f]">
+      <div className="container">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
+              Built for enquiries
+            </p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
+              SEO is not magic. It is clarity, speed, trust, and consistent
+              pages.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
+              {siteConfig.name} helps businesses turn their website into a
+              stronger sales asset: easier to understand, easier to index, and
+              easier for clients to contact.
+            </p>
           </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {trustMetrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-lg border border-slate-900/10 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/5"
+              >
+                <p className="text-4xl font-semibold text-slate-950 dark:text-white">
+                  {metric.value}
+                </p>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {resultPillars.map((pillar) => (
+            <article
+              key={pillar.title}
+              className="rounded-lg border border-slate-900/10 bg-slate-50 p-6 dark:border-white/10 dark:bg-white/5"
+            >
+              <pillar.icon className="size-7 text-teal-700 dark:text-teal-300" />
+              <h3 className="mt-5 text-2xl font-semibold text-slate-950 dark:text-white">
+                {pillar.title}
+              </h3>
+              <p className="mt-3 leading-7 text-slate-700 dark:text-slate-300">
+                {pillar.description}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-14 grid gap-4 lg:grid-cols-5">
+          {serviceCards.map((service) => (
+            <Link
+              key={service.slug}
+              href={service.href}
+              className="group rounded-lg border border-slate-900/10 bg-white p-5 transition hover:-translate-y-1 hover:border-slate-900/25 dark:border-white/10 dark:bg-[#0a1728] dark:hover:border-white/25"
+            >
+              <p className="text-sm font-semibold text-teal-700 dark:text-teal-300">
+                {service.title}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                {service.summary}
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-950 dark:text-white">
+                View service
+                <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
