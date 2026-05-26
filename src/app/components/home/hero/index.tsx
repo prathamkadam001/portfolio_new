@@ -40,8 +40,8 @@ function HeroSection() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mt-7 max-w-4xl text-4xl font-semibold leading-none tracking-normal text-slate-950 dark:text-white sm:text-5xl md:text-6xl"
           >
-            Freelance full stack developer for websites that rank, load fast,
-            and win clients.
+            Pratham Kadam builds websites that rank, load fast, and win
+            clients.
           </motion.h1>
 
           <motion.p

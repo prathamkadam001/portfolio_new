@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Terms & Condition | Awake Agency",
+    title: "Terms and Conditions | Pratham Kadam",
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function Page() {

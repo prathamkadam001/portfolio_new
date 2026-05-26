@@ -4,16 +4,28 @@ export const siteConfig = {
   role: "Freelance Full Stack Developer",
   title: "Pratham Kadam | Freelance Full Stack Developer in Ahmedabad",
   description:
-    "Hire Pratham Kadam, a freelance full stack developer in Ahmedabad, India, for SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO with Next.js, React, Node.js, and MongoDB.",
+    "Pratham Kadam is a freelance full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO foundations with Next.js, React, Node.js, and MongoDB.",
   url: "https://prathamkadam.netlify.app",
   locale: "en_IN",
+  language: "en-IN",
   email: "prathamkadam.dev@gmail.com",
   phone: "+91 8128293873",
   location: "Ahmedabad, Gujarat, India",
   availability: "Available for freelance projects",
   ogImage: "/images/owner/pratham_image.png",
+  ogImageAlt:
+    "Pratham Kadam, freelance full stack developer from Ahmedabad, Gujarat, India",
   keywords: [
     "Pratham Kadam",
+    "PrathamKadam",
+    "Pratham Kadam Ahmedabad",
+    "Pratham Kadam portfolio",
+    "Pratham Kadam website",
+    "Pratham Kadam developer",
+    "Pratham Kadam full stack developer",
+    "Pratham Kadam web developer",
+    "Pratham Kadam React developer",
+    "Pratham Kadam Next.js developer",
     "full stack developer",
     "freelance full stack developer",
     "Next.js developer",
@@ -35,6 +47,16 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/pratham__kadam2103",
     github: "https://github.com/prathamkadam001",
   },
+  profiles: [
+    "https://www.linkedin.com/in/pratham-kadam-fullstack-developer/",
+    "https://www.instagram.com/pratham__kadam2103",
+    "https://github.com/prathamkadam001",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/pratham-kadam-fullstack-developer/",
+    "https://www.instagram.com/pratham__kadam2103",
+    "https://github.com/prathamkadam001",
+  ],
 }
 
 export const serviceOfferings = [

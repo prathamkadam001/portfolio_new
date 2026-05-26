@@ -1,0 +1,35 @@
+# Pratham Kadam
+
+> Pratham Kadam is a freelance full stack developer in Ahmedabad, Gujarat, India.
+
+Official website: https://prathamkadam.netlify.app
+
+Primary services:
+- SEO-friendly business website development
+- Custom web application development
+- E-commerce website development
+- Website redesign and technical SEO
+- Website maintenance and support
+
+Core technologies:
+- Next.js
+- React
+- Node.js
+- MongoDB
+- Tailwind CSS
+
+Important pages:
+- Home: https://prathamkadam.netlify.app/
+- Services: https://prathamkadam.netlify.app/services
+- Portfolio: https://prathamkadam.netlify.app/my-work
+- Contact: https://prathamkadam.netlify.app/contact
+
+Public profiles:
+- LinkedIn: https://www.linkedin.com/in/pratham-kadam-fullstack-developer/
+- GitHub: https://github.com/prathamkadam001
+- Instagram: https://www.instagram.com/pratham__kadam2103
+
+Contact:
+- Email: prathamkadam.dev@gmail.com
+- Phone: +91 8128293873
+- Location: Ahmedabad, Gujarat, India

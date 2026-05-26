@@ -211,34 +211,34 @@ const startupPlanList: startupPlan[] = [
 
 const faqList: faq[] = [
   {
-    faq_que: 'What services does Awake Agency offer?',
+    faq_que: 'What services does Pratham Kadam offer?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Pratham Kadam builds SEO-friendly business websites, custom web apps, e-commerce websites, redesigns, and technical SEO improvements.',
   },
   {
     faq_que: 'How long does a typical project take?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Small business websites usually take a few weeks, while custom web applications depend on scope, integrations, content, and review cycles.',
   },
   {
-    faq_que: 'How is pricing structured at Awake Agency?',
+    faq_que: 'How is pricing structured?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Pricing depends on the number of pages, design complexity, backend features, SEO work, and post-launch support requirements.',
   },
   {
     faq_que: 'Do you offer ongoing support after project completion?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Yes. Maintenance can include bug fixes, content updates, performance improvements, SEO updates, and small feature additions.',
   },
   {
-    faq_que: 'How often will I receive updates on my project?',
+    faq_que: 'Can you make my website SEO-ready?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Yes. SEO-ready setup includes clean metadata, headings, sitemap, robots.txt, schema, crawlable images, performance basics, and clear service content.',
   },
   {
-    faq_que: 'How often will I receive updates on my project?',
+    faq_que: 'Do you work with clients outside Ahmedabad?',
     faq_ans:
-      'Yes, we provide post-launch support to ensure smooth implementation and offer ongoing maintenance packages for clients needing regular updates or technical assistance.',
+      'Yes. Pratham Kadam works with Ahmedabad, India, and remote clients through calls, shared planning, and deployment-ready delivery.',
   },
 ]
 

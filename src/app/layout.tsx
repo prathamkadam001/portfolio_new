@@ -11,6 +11,7 @@ const title = {
   template: `%s | ${siteConfig.name}`,
 }
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+const profileImageUrl = `${siteConfig.url}${siteConfig.ogImage}`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -22,6 +23,12 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   category: "Full Stack Development",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
   },
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - ${siteConfig.role}`,
+        alt: siteConfig.ogImageAlt,
       },
     ],
   },
@@ -64,6 +71,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/images/owner/pratham_image.png",
   },
+  other: {
+    "profile:first_name": "Pratham",
+    "profile:last_name": "Kadam",
+    "geo.region": "IN-GJ",
+    "geo.placename": "Ahmedabad",
+    "ICBM": "23.0225, 72.5714",
+  },
   ...(googleVerification
     ? {
         verification: {
@@ -87,8 +101,22 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.name,
+    "@id": `${siteConfig.url}/#person`,
+    alternateName: [
+      "Pratham",
+      "PrathamKadam",
+      "Pratham Kadam Developer",
+      "Pratham Kadam Full Stack Developer",
+      "Pratham Kadam Web Developer",
+    ],
     url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    image: {
+      "@type": "ImageObject",
+      "@id": `${siteConfig.url}/#profile-image`,
+      url: profileImageUrl,
+      contentUrl: profileImageUrl,
+      caption: siteConfig.ogImageAlt,
+    },
     jobTitle: siteConfig.role,
     email: siteConfig.email,
     telephone: siteConfig.phone,
@@ -99,6 +127,11 @@ const jsonLd = [
       addressCountry: "IN",
     },
     sameAs: Object.values(siteConfig.socialLinks),
+    knowsLanguage: ["English", "Hindi", "Gujarati"],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/#webpage`,
+    },
     knowsAbout: [
       "Next.js development",
       "React development",
@@ -112,8 +145,9 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: `${siteConfig.name} - Freelance Full Stack Developer`,
+    "@id": `${siteConfig.url}/#professional-service`,
     url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    image: profileImageUrl,
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phone,
@@ -122,6 +156,8 @@ const jsonLd = [
     founder: {
       "@type": "Person",
       name: siteConfig.name,
+      url: siteConfig.url,
+      "@id": `${siteConfig.url}/#person`,
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -141,13 +177,48 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
+    "@id": `${siteConfig.url}/#website`,
     url: siteConfig.url,
     description: siteConfig.description,
-    inLanguage: siteConfig.locale,
+    inLanguage: siteConfig.language,
     publisher: {
       "@type": "Person",
       name: siteConfig.name,
+      "@id": `${siteConfig.url}/#person`,
     },
+    about: {
+      "@type": "Person",
+      name: siteConfig.name,
+      "@id": `${siteConfig.url}/#person`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: siteConfig.title,
+    "@id": `${siteConfig.url}/#webpage`,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: siteConfig.language,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    primaryImageOfPage: {
+      "@id": `${siteConfig.url}/#profile-image`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    name: `${siteConfig.name} profile photo`,
+    "@id": `${siteConfig.url}/#profile-image`,
+    contentUrl: profileImageUrl,
+    thumbnailUrl: profileImageUrl,
+    caption: siteConfig.ogImageAlt,
+    representativeOfPage: true,
   },
   {
     "@context": "https://schema.org",

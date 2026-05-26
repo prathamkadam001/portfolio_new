@@ -1,7 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
-    title: "Privacy Policy | Awake Agency",
+    title: "Privacy Policy | Pratham Kadam",
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function Page() {
