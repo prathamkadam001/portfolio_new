@@ -1,5 +1,10 @@
 import { MetadataRoute } from "next"
-import { serviceOfferings, siteConfig } from "@/lib/site"
+import {
+  featuredProjects,
+  seoArticles,
+  serviceOfferings,
+  siteConfig,
+} from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-05-29")
@@ -8,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/contact",
     "/my-work",
+    "/blog",
     "/services",
   ].map((route) => ({
     url: route === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${route}`,
@@ -24,5 +30,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...routes, ...serviceRoutes]
+  const workRoutes = featuredProjects.map((project) => ({
+    url: `${siteConfig.url}/work/${project.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+    images: [`${siteConfig.url}${project.image}`],
+  }))
+
+  const blogRoutes = seoArticles.map((article) => ({
+    url: `${siteConfig.url}/blog/${article.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
+
+  return [...routes, ...serviceRoutes, ...workRoutes, ...blogRoutes]
 }

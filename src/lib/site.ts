@@ -608,7 +608,7 @@ export const footerData = {
     email: siteConfig.email,
     phone: siteConfig.phone,
   },
-  copyright: `© ${new Date().getFullYear()} ${siteConfig.name}. All Rights Reserved.`,
+  copyright: `Copyright ${new Date().getFullYear()} ${siteConfig.name}. All Rights Reserved.`,
 }
 
 export function getServiceBySlug(slug: string) {
