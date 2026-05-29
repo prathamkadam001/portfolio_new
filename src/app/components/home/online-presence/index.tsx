@@ -35,8 +35,6 @@ function OnlinePresence() {
             >
               <Link
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={`Open ${project.title}`}
                 className="block"
               >
@@ -59,7 +57,7 @@ function OnlinePresence() {
                   {project.category}
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
-                  {project.title}
+                  <Link href={project.link}>{project.title}</Link>
                 </h3>
                 <p className="mt-3 leading-7 text-slate-700 dark:text-slate-300">
                   {project.description}
@@ -74,6 +72,13 @@ function OnlinePresence() {
                     </span>
                   ))}
                 </div>
+                <Link
+                  href={project.link}
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950"
+                >
+                  Read case study
+                  <ArrowUpRight className="size-4" />
+                </Link>
               </div>
             </article>
           ))}

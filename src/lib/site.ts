@@ -285,76 +285,147 @@ export const serviceCards = serviceOfferings.map((service) => ({
 export const featuredProjects = [
   {
     id: 1,
+    slug: "global-it-computer-academy",
     title: "Global IT Computer Academy",
     category: "Educational",
     image: "/images/projects/Globalitians.png",
     description:
       "Education-focused platform designed to present courses, improve lead capture, and support a stronger digital presence.",
     tags: ["LMS", "Next.js", "Node.js"],
-    link: "https://globalitians.com/",
+    link: "/work/global-it-computer-academy",
+    liveLink: "https://globalitians.com/",
+    clientType: "Computer training institute",
+    challenge:
+      "The institute needed a more trustworthy digital presence to present courses clearly and convert visitors into student enquiries.",
+    solution:
+      "I structured the website around course discovery, credibility, contact actions, and responsive performance so visitors can quickly understand the academy and take the next step.",
+    outcome:
+      "The final build gives the institute a clearer online presence, better course presentation, and a stronger path for enquiry generation.",
+    services: ["Business Website Development", "Responsive UI", "Lead-focused structure"],
   },
   {
     id: 2,
+    slug: "gagan-belt",
     title: "Gagan Belt",
     category: "E-Commerce",
     image: "/images/projects/GaganBelt.png",
     description:
       "Industrial product website built to present catalog information clearly and support product-focused enquiries.",
     tags: ["Next.js", "Node.js", "MongoDB"],
-    link: "https://gaganbelt.com/",
+    link: "/work/gagan-belt",
+    liveLink: "https://gaganbelt.com/",
+    clientType: "Industrial product business",
+    challenge:
+      "The business needed a product-focused website that could make industrial offerings easier to browse and enquire about.",
+    solution:
+      "I built a structured product experience with a clean interface, responsive layouts, and catalogue-first content presentation.",
+    outcome:
+      "The site supports clearer product discovery and gives buyers a more professional path to understand and contact the business.",
+    services: ["E-commerce Website Development", "Product Catalogue", "Full Stack Development"],
   },
   {
     id: 3,
+    slug: "global-it-infosolution",
     title: "Global IT Infosolution",
     category: "IT Company",
     image: "/images/projects/globalitinfosolution.png",
     description:
       "Corporate services website structured to explain offerings, build trust, and support inbound enquiries.",
     tags: ["Next.js", "SEO", "Responsive"],
-    link: "https://globalitinfosolution.com/",
+    link: "/work/global-it-infosolution",
+    liveLink: "https://globalitinfosolution.com/",
+    clientType: "IT services company",
+    challenge:
+      "The company needed a professional services website that explained its work clearly and helped visitors trust the brand.",
+    solution:
+      "I created a responsive company website with service sections, contact flow, and SEO-friendly structure for better discoverability.",
+    outcome:
+      "The business now has a cleaner digital profile that supports credibility, service discovery, and inbound project enquiries.",
+    services: ["Corporate Website", "Technical SEO", "Responsive Development"],
   },
   {
     id: 4,
+    slug: "balanced-behavioral-health",
     title: "Balanced Behavioral Health",
     category: "Healthcare",
     image: "/images/projects/bbhsl.png",
     description:
       "Healthcare-oriented website focused on accessibility, credibility, and a clean user experience for visitors.",
     tags: ["MERN", "MySQL", "Tailwind"],
-    link: "https://bbhsl.globalitinfosolution.com/",
+    link: "/work/balanced-behavioral-health",
+    liveLink: "https://bbhsl.globalitinfosolution.com/",
+    clientType: "Healthcare service provider",
+    challenge:
+      "Healthcare visitors need clear, calm, and credible information before taking action, especially on service pages.",
+    solution:
+      "I focused the build on readable layouts, accessible content structure, responsive pages, and a clean navigation experience.",
+    outcome:
+      "The website presents healthcare information in a more trustworthy and accessible way for potential visitors.",
+    services: ["Healthcare Website", "Responsive UI", "Content Structure"],
   },
   {
     id: 5,
+    slug: "bharat-engineering-works",
     title: "Bharat Engineering Works",
     category: "Manufacturing",
     image: "/images/projects/BEW.png",
     description:
       "Industrial business website for presenting products, company information, and conversion-focused contact paths.",
     tags: ["Next.js", "Node.js", "API"],
-    link: "https://bewvalves.com/",
+    link: "/work/bharat-engineering-works",
+    liveLink: "https://bewvalves.com/",
+    clientType: "Manufacturing company",
+    challenge:
+      "The company needed a website that could present industrial products and company details in a professional, enquiry-friendly format.",
+    solution:
+      "I built product and business-focused pages with clear sections, responsive presentation, and contact paths for potential buyers.",
+    outcome:
+      "The site improves trust for industrial visitors and makes the company easier to evaluate before making an enquiry.",
+    services: ["Manufacturing Website", "Product Presentation", "API Integration"],
   },
   {
     id: 6,
+    slug: "viyan-electronics",
     title: "Viyan Electronics",
     category: "Electronics",
     image: "/images/projects/ViyanElectronics.png",
     description:
       "Responsive company website built to improve online visibility and showcase the brand more professionally.",
     tags: ["Next.js", "Responsive", "Tailwind"],
-    link: "https://www.viyanelectronics.com/Users",
+    link: "/work/viyan-electronics",
+    liveLink: "https://www.viyanelectronics.com/Users",
+    clientType: "Electronics business",
+    challenge:
+      "The business needed a modern web presence to present its brand and products more clearly to online visitors.",
+    solution:
+      "I created a responsive frontend with clean layouts, brand-focused visuals, and practical navigation for users.",
+    outcome:
+      "The website gives the brand a stronger digital presence and a better first impression across devices.",
+    services: ["Business Website", "Responsive Frontend", "Tailwind CSS"],
   },
   {
     id: 7,
+    slug: "school-management-system",
     title: "School Management System",
     category: "Management System",
     image: "/images/projects/SchoolManagementSystem.png",
     description:
       "Management platform built around operational workflows for students, staff, and day-to-day administration.",
     tags: ["Next.js", "Node.js", "Student Management", "Employee Management"],
-    link: "https://school.globalitinfosolution.com/en",
+    link: "/work/school-management-system",
+    liveLink: "https://school.globalitinfosolution.com/en",
+    clientType: "Education management platform",
+    challenge:
+      "Schools need practical dashboards and workflows that reduce manual administration and organize student and staff data.",
+    solution:
+      "I worked on structured management flows for students, employees, and daily operations with a usable web interface.",
+    outcome:
+      "The platform supports smoother administration and creates a stronger foundation for managing school operations digitally.",
+    services: ["Custom Web Application", "Dashboard UI", "Education Management"],
   },
   {
     id: 8,
+    slug: "online-examination-portal",
     title: "Online Examination Portal",
     category: "Management System",
     image: "/images/projects/OnlineExaminationPortal.png",
@@ -366,7 +437,112 @@ export const featuredProjects = [
       "Next.js",
       "Certificates",
     ],
-    link: "https://exam.globalitinfosolution.com/",
+    link: "/work/online-examination-portal",
+    liveLink: "https://exam.globalitinfosolution.com/",
+    clientType: "Online education platform",
+    challenge:
+      "Academic teams needed a digital assessment flow that could support exams, student handling, and certificate generation.",
+    solution:
+      "I helped shape an examination portal with structured workflows for assessment management and result-oriented operations.",
+    outcome:
+      "The portal supports a more organized digital examination process and reduces friction in academic administration.",
+    services: ["Custom Web Application", "Online Examination", "Certificate Workflow"],
+  },
+]
+
+export const seoArticles = [
+  {
+    slug: "freelance-full-stack-developer-ahmedabad",
+    title: "Freelance Full Stack Developer in Ahmedabad: What Businesses Should Look For",
+    description:
+      "A practical guide for Ahmedabad businesses hiring a freelance full stack developer for websites, dashboards, e-commerce, and technical SEO.",
+    keyword: "freelance full stack developer in Ahmedabad",
+    date: "2026-05-29",
+    readingTime: "5 min read",
+    sections: [
+      {
+        heading: "Start with business clarity, not only technology",
+        body:
+          "A good freelance developer should understand why the website or web app exists. For most businesses, the goal is not only design. It is trust, enquiries, clear service presentation, faster loading, and a simple path for customers to contact you.",
+      },
+      {
+        heading: "Check full stack capability",
+        body:
+          "If your project needs forms, dashboards, admin panels, APIs, authentication, databases, or custom workflows, hire someone comfortable with both frontend and backend. A full stack developer can connect the user interface with the business logic behind it.",
+      },
+      {
+        heading: "Ask for SEO basics from day one",
+        body:
+          "Metadata, headings, sitemap, robots file, schema, internal links, and mobile performance should be part of the build. Fixing these after launch is possible, but building them correctly from the start is cleaner and faster.",
+      },
+      {
+        heading: "Review real project work",
+        body:
+          "Look for projects similar to your goal: business websites, management systems, e-commerce catalogues, or service pages. Case studies show whether the developer can solve business problems, not only write code.",
+      },
+    ],
+  },
+  {
+    slug: "business-website-cost-india",
+    title: "How Much Does a Business Website Cost in India?",
+    description:
+      "Understand what affects business website pricing in India, from page count and design to SEO, forms, dashboards, and long-term maintenance.",
+    keyword: "business website cost in India",
+    date: "2026-05-29",
+    readingTime: "6 min read",
+    sections: [
+      {
+        heading: "Website cost depends on scope",
+        body:
+          "A simple brochure website costs less than a custom website with forms, animations, admin panels, APIs, or e-commerce features. The more business logic and content structure required, the more planning and development time is needed.",
+      },
+      {
+        heading: "SEO setup is part of a serious build",
+        body:
+          "A website that needs Google visibility should include unique titles, descriptions, headings, clean URLs, sitemap, robots file, image alt text, and schema. These details help Google understand the site and help users trust it.",
+      },
+      {
+        heading: "Performance affects value",
+        body:
+          "Fast websites usually convert better and feel more professional. Using a modern stack like Next.js can help with speed, structure, and scalability when implemented carefully.",
+      },
+      {
+        heading: "Think about maintenance",
+        body:
+          "The initial build is only one part. Businesses often need content changes, bug fixes, new pages, analytics, Search Console checks, and feature updates after launch.",
+      },
+    ],
+  },
+  {
+    slug: "nextjs-good-for-seo-websites",
+    title: "Why Next.js Is Good for SEO-Friendly Business Websites",
+    description:
+      "Learn why Next.js is a strong choice for business websites that need performance, structured metadata, server rendering, and scalable SEO pages.",
+    keyword: "Next.js SEO website developer",
+    date: "2026-05-29",
+    readingTime: "5 min read",
+    sections: [
+      {
+        heading: "Next.js makes SEO structure easier",
+        body:
+          "Next.js supports page-level metadata, server-rendered pages, structured routing, sitemap generation, and clean internal linking. These are useful for websites that need to be discovered and understood by search engines.",
+      },
+      {
+        heading: "Performance can be stronger",
+        body:
+          "A well-built Next.js website can load quickly, optimize images, and ship only the JavaScript required for interactive sections. This improves user experience and can support better Core Web Vitals.",
+      },
+      {
+        heading: "It supports service and case-study pages",
+        body:
+          "Ranking usually needs more than one homepage. Next.js makes it practical to create service pages, project pages, blog articles, and location-focused pages with unique metadata and schema.",
+      },
+      {
+        heading: "It is still about execution",
+        body:
+          "Next.js alone does not guarantee ranking. The content, technical setup, internal links, backlinks, page speed, and trust signals still matter. The framework simply gives a strong foundation.",
+      },
+    ],
   },
 ]
 
@@ -415,6 +591,7 @@ export const footerData = {
       { name: "Home", url: "/" },
       { name: "Services", url: "/services" },
       { name: "Work", url: "/my-work" },
+      { name: "Blog", url: "/blog" },
       { name: "Contact", url: "/contact" },
     ],
   },
@@ -436,4 +613,12 @@ export const footerData = {
 
 export function getServiceBySlug(slug: string) {
   return serviceOfferings.find((service) => service.slug === slug)
+}
+
+export function getProjectBySlug(slug: string) {
+  return featuredProjects.find((project) => project.slug === slug)
+}
+
+export function getArticleBySlug(slug: string) {
+  return seoArticles.find((article) => article.slug === slug)
 }

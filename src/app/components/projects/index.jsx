@@ -134,8 +134,6 @@ export default function ProjectsSection() {
             >
               <Link
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="relative block aspect-[16/10] overflow-hidden"
               >
                 <Image
@@ -155,7 +153,7 @@ export default function ProjectsSection() {
                   {project.category}
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
-                  {project.title}
+                  <Link href={project.link}>{project.title}</Link>
                 </h2>
                 <p className="mt-3 leading-7 text-slate-700 dark:text-slate-300">
                   {project.description}
@@ -169,6 +167,24 @@ export default function ProjectsSection() {
                       {tag}
                     </span>
                   ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    href={project.link}
+                    className="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950"
+                  >
+                    Read case study
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                  <Link
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-slate-900/15 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900/35 dark:border-white/15 dark:text-slate-300"
+                  >
+                    Live site
+                    <ArrowUpRight className="size-4" />
+                  </Link>
                 </div>
               </div>
             </article>
