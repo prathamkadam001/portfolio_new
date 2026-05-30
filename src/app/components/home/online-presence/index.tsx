@@ -44,6 +44,7 @@ function OnlinePresence() {
                     alt={`${project.title} website project by Pratham Kadam`}
                     width={900}
                     height={560}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />

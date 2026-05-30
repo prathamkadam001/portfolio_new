@@ -38,7 +38,7 @@ export default function AboutSection() {
                 width={760}
                 height={820}
                 className="aspect-[4/5] w-full rounded-md object-cover"
-                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
               />
             </div>
           </div>

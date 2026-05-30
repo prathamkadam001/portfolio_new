@@ -1,7 +1,20 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import * as THREE from "three"
+import {
+  AmbientLight,
+  Group,
+  IcosahedronGeometry,
+  Mesh,
+  MeshBasicMaterial,
+  MeshStandardMaterial,
+  PerspectiveCamera,
+  PointLight,
+  Scene,
+  SphereGeometry,
+  TorusKnotGeometry,
+  WebGLRenderer,
+} from "three"
 
 function PortfolioScene() {
   const mountRef = useRef<HTMLDivElement | null>(null)
@@ -10,64 +23,60 @@ function PortfolioScene() {
     const mount = mountRef.current
     if (!mount) return
 
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100)
+    const scene = new Scene()
+    const camera = new PerspectiveCamera(45, 1, 0.1, 100)
     camera.position.set(0, 0.2, 8)
 
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
+    const renderer = new WebGLRenderer({
+      antialias: false,
       alpha: true,
-      preserveDrawingBuffer: true,
+      preserveDrawingBuffer: false,
       powerPreference: "high-performance",
     })
     renderer.setClearAlpha(0)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25))
     mount.appendChild(renderer.domElement)
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
+    const ambientLight = new AmbientLight(0xffffff, 1.5)
     scene.add(ambientLight)
 
-    const keyLight = new THREE.PointLight(0x59f7ff, 10, 18)
+    const keyLight = new PointLight(0x59f7ff, 8, 18)
     keyLight.position.set(-4, 4, 6)
     scene.add(keyLight)
 
-    const accentLight = new THREE.PointLight(0xf7b267, 7, 14)
+    const accentLight = new PointLight(0xf7b267, 5, 14)
     accentLight.position.set(4, -2, 5)
     scene.add(accentLight)
 
-    const group = new THREE.Group()
+    const group = new Group()
     scene.add(group)
 
-    const shellGeometry = new THREE.TorusKnotGeometry(1.65, 0.16, 180, 18)
-    const shellMaterial = new THREE.MeshPhysicalMaterial({
+    const shellGeometry = new TorusKnotGeometry(1.65, 0.16, 96, 12)
+    const shellMaterial = new MeshStandardMaterial({
       color: 0x8be9ff,
-      metalness: 0.45,
-      roughness: 0.18,
-      transmission: 0.2,
-      thickness: 0.6,
-      clearcoat: 1,
-      clearcoatRoughness: 0.12,
+      metalness: 0.38,
+      roughness: 0.22,
     })
-    const shell = new THREE.Mesh(shellGeometry, shellMaterial)
+    const shell = new Mesh(shellGeometry, shellMaterial)
     shell.rotation.x = 0.7
     group.add(shell)
 
-    const wireGeometry = new THREE.IcosahedronGeometry(2.35, 1)
-    const wireMaterial = new THREE.MeshBasicMaterial({
+    const wireGeometry = new IcosahedronGeometry(2.35, 1)
+    const wireMaterial = new MeshBasicMaterial({
       color: 0xffffff,
       wireframe: true,
       transparent: true,
       opacity: 0.16,
     })
-    const wire = new THREE.Mesh(wireGeometry, wireMaterial)
+    const wire = new Mesh(wireGeometry, wireMaterial)
     group.add(wire)
 
-    const dotGeometry = new THREE.SphereGeometry(0.035, 12, 12)
-    const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xd7ff73 })
-    const dots = new THREE.Group()
+    const dotGeometry = new SphereGeometry(0.035, 8, 8)
+    const dotMaterial = new MeshBasicMaterial({ color: 0xd7ff73 })
+    const dots = new Group()
 
-    for (let index = 0; index < 70; index += 1) {
-      const dot = new THREE.Mesh(dotGeometry, dotMaterial)
+    for (let index = 0; index < 36; index += 1) {
+      const dot = new Mesh(dotGeometry, dotMaterial)
       const radius = 2.8 + Math.random() * 1.8
       const theta = Math.random() * Math.PI * 2
       const phi = Math.acos(2 * Math.random() - 1)
