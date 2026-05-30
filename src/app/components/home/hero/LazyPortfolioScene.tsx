@@ -1,55 +1,55 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const PortfolioScene = dynamic(() => import("./PortfolioScene"), {
   ssr: false,
-  loading: () => (
+  loading: () => null,
+})
+
+function StaticPortfolioModel() {
+  return (
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.26),transparent_34%)]"
-    />
-  ),
-})
+      className="absolute inset-0 grid place-items-center overflow-hidden"
+    >
+      <div className="absolute h-[72%] w-[72%] rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.22),transparent_60%)] blur-2xl" />
+      <div className="relative aspect-square w-[min(78%,31rem)] [perspective:900px]">
+        <div className="absolute inset-[18%] rounded-full bg-[radial-gradient(circle_at_35%_30%,rgba(255,255,255,0.92),rgba(139,233,255,0.76)_30%,rgba(20,184,166,0.34)_58%,rgba(15,23,42,0.08)_100%)] shadow-[0_28px_80px_rgba(20,184,166,0.26)] dark:bg-[radial-gradient(circle_at_35%_30%,rgba(255,255,255,0.9),rgba(139,233,255,0.72)_28%,rgba(20,184,166,0.28)_56%,rgba(15,23,42,0.12)_100%)]" />
+        <div className="absolute left-[7%] top-[38%] h-[24%] w-[86%] rotate-[-15deg] rounded-[999px] border-[14px] border-teal-700/45 shadow-[0_0_30px_rgba(20,184,166,0.18)] dark:border-teal-200/45" />
+        <div className="absolute left-[10%] top-[37%] h-[25%] w-[82%] rotate-[20deg] rounded-[999px] border-[10px] border-slate-500/35 dark:border-white/28" />
+        <div className="absolute left-[32%] top-[10%] h-[76%] w-[36%] rotate-[58deg] rounded-[999px] border-[11px] border-cyan-700/40 dark:border-cyan-200/42" />
+        <span className="absolute left-[14%] top-[28%] size-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(190,242,100,0.75)]" />
+        <span className="absolute right-[18%] top-[26%] size-3 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(190,242,100,0.75)]" />
+        <span className="absolute bottom-[22%] left-[23%] size-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(190,242,100,0.75)]" />
+      </div>
+    </div>
+  )
+}
 
 function LazyPortfolioScene() {
   const [shouldRender, setShouldRender] = useState(false)
 
-  useEffect(() => {
-    const canRenderScene =
-      window.matchMedia("(min-width: 1024px)").matches &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-
-    if (!canRenderScene) return
-
-    const renderScene = () => setShouldRender(true)
-    const idleWindow = window as Window &
-      typeof globalThis & {
-        requestIdleCallback?: (
-          callback: IdleRequestCallback,
-          options?: IdleRequestOptions,
-        ) => number
-        cancelIdleCallback?: (handle: number) => void
-      }
-
-    if (idleWindow.requestIdleCallback) {
-      const idleId = idleWindow.requestIdleCallback(renderScene, {
-        timeout: 3500,
-      })
-      return () => idleWindow.cancelIdleCallback?.(idleId)
+  const loadInteractiveScene = () => {
+    if (
+      shouldRender ||
+      !window.matchMedia("(min-width: 1024px)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return
     }
 
-    const timeoutId = window.setTimeout(renderScene, 2500)
-    return () => window.clearTimeout(timeoutId)
-  }, [])
+    setShouldRender(true)
+  }
 
   return (
-    <div className="absolute inset-0">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.26),transparent_34%)]"
-      />
+    <div
+      className="absolute inset-0"
+      onPointerEnter={loadInteractiveScene}
+      onFocus={loadInteractiveScene}
+    >
+      <StaticPortfolioModel />
       {shouldRender ? <PortfolioScene /> : null}
     </div>
   )

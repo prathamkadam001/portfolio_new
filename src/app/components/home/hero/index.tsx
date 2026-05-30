@@ -56,8 +56,10 @@ function HeroSection() {
           </ul>
         </div>
 
-        <div className="relative min-h-[220px] sm:min-h-[260px] lg:min-h-[560px]">
-          <div className="absolute inset-x-8 top-6 h-40 rounded-full bg-teal-300/20 blur-3xl lg:hidden" />
+        <div className="relative min-h-[360px] lg:min-h-[560px]">
+          <div className="absolute inset-0 lg:hidden">
+            <LazyPortfolioScene />
+          </div>
           <div className="absolute bottom-0 left-0 right-0 grid gap-3 sm:grid-cols-3 lg:left-auto lg:w-[88%]">
             {trustMetrics.map((metric) => (
               <div
