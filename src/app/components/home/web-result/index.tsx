@@ -27,7 +27,7 @@ function WebResult() {
   return (
     <section id="aboutus" className="bg-white py-20 dark:bg-[#07111f]">
       <div className="container">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="reveal-on-scroll grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
               Built for enquiries
@@ -64,7 +64,7 @@ function WebResult() {
           {resultPillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="rounded-lg border border-slate-900/10 bg-slate-50 p-6 dark:border-white/10 dark:bg-white/5"
+              className="reveal-child rounded-lg border border-slate-900/10 bg-slate-50 p-6 dark:border-white/10 dark:bg-white/5"
             >
               <pillar.icon className="size-7 text-teal-700 dark:text-teal-300" />
               <h3 className="mt-5 text-2xl font-semibold text-slate-950 dark:text-white">
@@ -82,7 +82,7 @@ function WebResult() {
             <Link
               key={service.slug}
               href={service.href}
-              className="group rounded-lg border border-slate-900/10 bg-white p-5 transition hover:-translate-y-1 hover:border-slate-900/25 dark:border-white/10 dark:bg-[#0a1728] dark:hover:border-white/25"
+              className="reveal-child group rounded-lg border border-slate-900/10 bg-white p-5 transition hover:-translate-y-1 hover:border-slate-900/25 dark:border-white/10 dark:bg-[#0a1728] dark:hover:border-white/25"
             >
               <p className="text-sm font-semibold text-teal-700 dark:text-teal-300">
                 {service.title}

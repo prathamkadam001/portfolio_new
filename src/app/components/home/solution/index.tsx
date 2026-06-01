@@ -6,7 +6,7 @@ function Solutions() {
   return (
     <section className="bg-white py-20 dark:bg-[#07111f]">
       <div className="container">
-        <div className="relative overflow-hidden rounded-lg bg-slate-950 px-6 py-16 text-white md:px-12 md:py-20">
+        <div className="reveal-on-scroll relative overflow-hidden rounded-lg bg-slate-950 px-6 py-16 text-white md:px-12 md:py-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(20,184,166,0.36),transparent_28%),radial-gradient(circle_at_88%_10%,rgba(247,178,103,0.28),transparent_30%)]" />
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>

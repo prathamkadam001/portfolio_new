@@ -9,7 +9,7 @@ function OnlinePresence() {
   return (
     <section id="work" className="bg-[#f7fbff] py-20 dark:bg-[#06101f]">
       <div className="container">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="reveal-on-scroll flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
               Work proof
@@ -31,7 +31,7 @@ function OnlinePresence() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group overflow-hidden rounded-lg border border-slate-900/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10 dark:border-white/10 dark:bg-[#0a1728]"
+              className="reveal-child group overflow-hidden rounded-lg border border-slate-900/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10 dark:border-white/10 dark:bg-[#0a1728]"
             >
               <Link
                 href={project.link}

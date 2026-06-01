@@ -54,7 +54,7 @@ export default function TechTools() {
   return (
     <section className="bg-[#eef7f6] py-20 dark:bg-[#081626]">
       <div className="container">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="reveal-on-scroll mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
             Stack
           </p>
@@ -67,7 +67,7 @@ export default function TechTools() {
           {techGroups.map((group) => (
             <article
               key={group.title}
-              className="rounded-lg border border-slate-900/10 bg-white p-7 dark:border-white/10 dark:bg-white/5"
+              className="reveal-child rounded-lg border border-slate-900/10 bg-white p-7 dark:border-white/10 dark:bg-white/5"
             >
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">
                 {group.title}
@@ -78,7 +78,7 @@ export default function TechTools() {
                   return (
                     <div
                       key={tool.name}
-                      className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-[#06101f]"
+                      className="reveal-child flex min-h-16 items-center gap-3 rounded-lg border border-slate-900/10 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-[#06101f]"
                     >
                       <Icon className="size-6 text-teal-700 dark:text-teal-300" />
                       <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">

@@ -7,7 +7,7 @@ function Innovation() {
   return (
     <section id="services" className="bg-white py-20 dark:bg-[#07111f]">
       <div className="container">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+        <div className="reveal-on-scroll flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-700 dark:text-orange-300">
               Services
@@ -29,7 +29,7 @@ function Innovation() {
           {serviceCards.map((service, index) => (
             <article
               key={service.slug}
-              className="group rounded-lg border border-slate-900/10 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+              className="reveal-child group rounded-lg border border-slate-900/10 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-slate-900/5 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
             >
               <div className="flex size-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950/40">
                 <Image

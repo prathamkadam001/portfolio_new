@@ -29,7 +29,7 @@ export default function AboutSection() {
     <section className="bg-[#eef7f6] py-20 dark:bg-[#081626]">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative">
+          <div className="reveal-on-scroll relative">
             <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(20,184,166,0.25),rgba(247,178,103,0.22))] blur-2xl" />
             <div className="relative overflow-hidden rounded-lg border border-white/70 bg-white p-3 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-white/5">
               <Image
@@ -43,7 +43,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div>
+          <div className="reveal-on-scroll">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
               About Pratham
             </p>
@@ -68,7 +68,7 @@ export default function AboutSection() {
               {strengths.map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-4 rounded-lg border border-slate-900/10 bg-white/70 p-5 dark:border-white/10 dark:bg-white/5"
+                  className="reveal-child flex gap-4 rounded-lg border border-slate-900/10 bg-white/70 p-5 dark:border-white/10 dark:bg-white/5"
                 >
                   <item.icon className="mt-1 size-6 shrink-0 text-teal-700 dark:text-teal-300" />
                   <div>
