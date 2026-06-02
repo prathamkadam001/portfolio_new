@@ -102,6 +102,9 @@ const jsonLd = [
     "@type": "Person",
     name: siteConfig.name,
     "@id": `${siteConfig.url}/#person`,
+    givenName: siteConfig.givenName,
+    familyName: siteConfig.familyName,
+    description: siteConfig.description,
     alternateName: [
       "Pratham",
       "PrathamKadam",
@@ -118,6 +121,11 @@ const jsonLd = [
       caption: siteConfig.ogImageAlt,
     },
     jobTitle: siteConfig.role,
+    hasOccupation: {
+      "@type": "Occupation",
+      name: siteConfig.role,
+      occupationalCategory: "Software Developer",
+    },
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: {
@@ -126,12 +134,20 @@ const jsonLd = [
       addressRegion: "Gujarat",
       addressCountry: "IN",
     },
-    sameAs: Object.values(siteConfig.socialLinks),
+    homeLocation: {
+      "@type": "Place",
+      name: siteConfig.location,
+    },
+    sameAs: siteConfig.sameAs,
     knowsLanguage: ["English", "Hindi", "Gujarati"],
     mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${siteConfig.url}/#webpage`,
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.url}/#profile-page`,
     },
+    subjectOf: [
+      { "@id": `${siteConfig.url}/#profile-page` },
+      { "@id": `${siteConfig.url}/#profile-image` },
+    ],
     knowsAbout: [
       "Next.js development",
       "React development",
@@ -195,8 +211,9 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    additionalType: "https://schema.org/ProfilePage",
     name: siteConfig.title,
-    "@id": `${siteConfig.url}/#webpage`,
+    "@id": `${siteConfig.url}/#profile-page`,
     url: siteConfig.url,
     description: siteConfig.description,
     inLanguage: siteConfig.language,
@@ -206,6 +223,9 @@ const jsonLd = [
     primaryImageOfPage: {
       "@id": `${siteConfig.url}/#profile-image`,
     },
+    mainEntity: {
+      "@id": `${siteConfig.url}/#person`,
+    },
     about: {
       "@id": `${siteConfig.url}/#person`,
     },
@@ -213,11 +233,17 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    name: `${siteConfig.name} profile photo`,
+    name: `${siteConfig.name} profile photo - full stack developer in Ahmedabad`,
     "@id": `${siteConfig.url}/#profile-image`,
     contentUrl: profileImageUrl,
     thumbnailUrl: profileImageUrl,
+    url: profileImageUrl,
     caption: siteConfig.ogImageAlt,
+    description:
+      "Profile photo of Pratham Kadam, freelance full stack developer from Ahmedabad, Gujarat, India.",
+    creator: {
+      "@id": `${siteConfig.url}/#person`,
+    },
     representativeOfPage: true,
   },
   {

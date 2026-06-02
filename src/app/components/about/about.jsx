@@ -33,7 +33,7 @@ export default function AboutSection() {
             <div className="absolute -inset-4 rounded-lg bg-[linear-gradient(135deg,rgba(20,184,166,0.25),rgba(247,178,103,0.22))] blur-2xl" />
             <div className="relative overflow-hidden rounded-lg border border-white/70 bg-white p-3 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-white/5">
               <Image
-                src="/images/owner/pratham_image.png"
+                src="/images/owner/pratham-kadam-full-stack-developer-ahmedabad.png"
                 alt="Pratham Kadam, freelance full stack developer in Ahmedabad"
                 width={760}
                 height={820}

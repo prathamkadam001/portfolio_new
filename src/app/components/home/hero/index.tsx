@@ -19,8 +19,7 @@ function HeroSection() {
           </div>
 
           <h1 className="hero-entrance hero-entrance-delay-1 mt-7 max-w-4xl text-4xl font-semibold leading-none tracking-normal text-slate-950 dark:text-white sm:text-5xl md:text-6xl">
-            Pratham Kadam builds websites that rank, load fast, and win
-            clients.
+            Pratham Kadam - Freelance Full Stack Developer in Ahmedabad.
           </h1>
 
           <p className="hero-entrance hero-entrance-delay-2 mt-7 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">

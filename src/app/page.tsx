@@ -9,13 +9,13 @@ import TechTools from "./components/home/TechTools/TechTools";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pratham Kadam - Freelance Full Stack Developer Portfolio",
+  title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
   description: siteConfig.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Pratham Kadam - Freelance Full Stack Developer Portfolio",
+    title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
     description: siteConfig.description,
     url: "/",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Pratham Kadam - Freelance Full Stack Developer Portfolio",
+    title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },

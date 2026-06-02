@@ -1,10 +1,12 @@
 export const siteConfig = {
   name: "Pratham Kadam",
   shortName: "Pratham Kadam",
+  givenName: "Pratham",
+  familyName: "Kadam",
   role: "Freelance Full Stack Developer",
-  title: "Pratham Kadam | Freelance Full Stack Developer in Ahmedabad",
+  title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad, India",
   description:
-    "Pratham Kadam is a freelance full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO foundations with Next.js, React, Node.js, and MongoDB.",
+    "Official portfolio website of Pratham Kadam, a freelance full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO foundations with Next.js, React, Node.js, and MongoDB.",
   url: "https://prathamkadam.netlify.app",
   locale: "en_IN",
   language: "en-IN",
@@ -12,7 +14,7 @@ export const siteConfig = {
   phone: "+91 8128293873",
   location: "Ahmedabad, Gujarat, India",
   availability: "Available for freelance projects",
-  ogImage: "/images/owner/pratham_image.png",
+  ogImage: "/images/owner/pratham-kadam-full-stack-developer-ahmedabad.png",
   ogImageAlt:
     "Pratham Kadam, freelance full stack developer from Ahmedabad, Gujarat, India",
   keywords: [
