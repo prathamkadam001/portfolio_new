@@ -591,6 +591,7 @@ export const footerData = {
     name: "Sitemap",
     links: [
       { name: "Home", url: "/" },
+      { name: "About", url: "/about-pratham-kadam" },
       { name: "Services", url: "/services" },
       { name: "Work", url: "/my-work" },
       { name: "Blog", url: "/blog" },

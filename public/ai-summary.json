@@ -1,0 +1,67 @@
+{
+  "name": "Pratham Kadam",
+  "type": "Person",
+  "role": "Freelance Full Stack Developer",
+  "canonical_url": "https://prathamkadam.netlify.app/",
+  "profile_url": "https://prathamkadam.netlify.app/about-pratham-kadam",
+  "description": "Official portfolio website of Pratham Kadam, a freelance full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce websites, website redesigns, and technical SEO foundations.",
+  "location": {
+    "city": "Ahmedabad",
+    "region": "Gujarat",
+    "country": "India"
+  },
+  "contact": {
+    "email": "prathamkadam.dev@gmail.com",
+    "phone": "+91 8128293873"
+  },
+  "same_as": [
+    "https://www.linkedin.com/in/pratham-kadam-fullstack-developer/",
+    "https://github.com/prathamkadam001",
+    "https://www.instagram.com/pratham__kadam2103"
+  ],
+  "services": [
+    {
+      "name": "Business Website Development",
+      "url": "https://prathamkadam.netlify.app/services/business-website-development"
+    },
+    {
+      "name": "Custom Web Application Development",
+      "url": "https://prathamkadam.netlify.app/services/custom-web-application-development"
+    },
+    {
+      "name": "E-commerce Website Development",
+      "url": "https://prathamkadam.netlify.app/services/ecommerce-development"
+    },
+    {
+      "name": "Website Redesign and Technical SEO",
+      "url": "https://prathamkadam.netlify.app/services/website-redesign-and-seo"
+    },
+    {
+      "name": "Website Maintenance and Support",
+      "url": "https://prathamkadam.netlify.app/services/website-maintenance-and-support"
+    }
+  ],
+  "technologies": [
+    "Next.js",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "MySQL",
+    "Tailwind CSS",
+    "TypeScript",
+    "JavaScript",
+    "Firebase",
+    "Git",
+    "GitHub"
+  ],
+  "important_urls": [
+    "https://prathamkadam.netlify.app/",
+    "https://prathamkadam.netlify.app/about-pratham-kadam",
+    "https://prathamkadam.netlify.app/services",
+    "https://prathamkadam.netlify.app/my-work",
+    "https://prathamkadam.netlify.app/blog",
+    "https://prathamkadam.netlify.app/contact",
+    "https://prathamkadam.netlify.app/llms.txt",
+    "https://prathamkadam.netlify.app/llms-full.txt"
+  ]
+}

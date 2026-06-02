@@ -29,7 +29,7 @@ export default function Home() {
         "@type": "ListItem",
         position: index + 1,
         name: project.title,
-        url: project.link,
+        url: `${siteConfig.url}${project.link}`,
         description: project.description,
       })),
     },

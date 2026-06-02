@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const profileImage = `${siteConfig.url}${siteConfig.ogImage}`
   const routes = [
     "/",
+    "/about-pratham-kadam",
     "/contact",
     "/my-work",
     "/blog",

@@ -26,7 +26,7 @@ const strengths = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-[#eef7f6] py-20 dark:bg-[#081626]">
+    <section id="aboutus" className="bg-[#eef7f6] py-20 dark:bg-[#081626]">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="reveal-on-scroll relative">
