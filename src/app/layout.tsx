@@ -5,6 +5,7 @@ import Footer from "./components/layout/footer/Footer"
 import ScrollToTop from "./components/scroll-to-top"
 import Providers from "./providers"
 import { featuredProjects, serviceOfferings, siteConfig } from "@/lib/site"
+import { llmResourceUrls } from "@/lib/llm-seo"
 
 const title = {
   default: siteConfig.title,
@@ -31,6 +32,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    types: {
+      "text/markdown": "/llms.txt",
+      "application/json": "/ai-summary.json",
+    },
   },
   openGraph: {
     type: "website",
@@ -77,6 +82,9 @@ export const metadata: Metadata = {
     "geo.region": "IN-GJ",
     "geo.placename": "Ahmedabad",
     "ICBM": "23.0225, 72.5714",
+    "llms-txt": llmResourceUrls.llmsTxt,
+    "llms-full": llmResourceUrls.llmsFullTxt,
+    "ai-summary": llmResourceUrls.aiSummary,
   },
   ...(googleVerification
     ? {
@@ -207,6 +215,38 @@ const jsonLd = [
       name: siteConfig.name,
       "@id": `${siteConfig.url}/#person`,
     },
+    hasPart: [
+      {
+        "@type": "CreativeWork",
+        "@id": `${llmResourceUrls.llmsTxt}#llm-summary`,
+        name: "Pratham Kadam LLM summary",
+        url: llmResourceUrls.llmsTxt,
+        encodingFormat: "text/markdown",
+        about: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${llmResourceUrls.llmsFullTxt}#llm-full-context`,
+        name: "Pratham Kadam full LLM context",
+        url: llmResourceUrls.llmsFullTxt,
+        encodingFormat: "text/markdown",
+        about: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
+      {
+        "@type": "Dataset",
+        "@id": `${llmResourceUrls.aiSummary}#ai-summary`,
+        name: "Pratham Kadam AI summary",
+        url: llmResourceUrls.aiSummary,
+        encodingFormat: "application/json",
+        about: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -229,6 +269,16 @@ const jsonLd = [
     about: {
       "@id": `${siteConfig.url}/#person`,
     },
+    significantLink: [
+      `${siteConfig.url}/who-is-pratham-kadam`,
+      `${siteConfig.url}/about-pratham-kadam`,
+      `${siteConfig.url}/services`,
+      `${siteConfig.url}/my-work`,
+      `${siteConfig.url}/blog`,
+      llmResourceUrls.llmsTxt,
+      llmResourceUrls.llmsFullTxt,
+      llmResourceUrls.aiSummary,
+    ],
   },
   {
     "@context": "https://schema.org",

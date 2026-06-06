@@ -54,6 +54,15 @@ const profileJsonLd = [
     description:
       "Official profile page for Pratham Kadam, freelance full stack developer in Ahmedabad, Gujarat, India.",
     inLanguage: siteConfig.language,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+    primaryImageOfPage: {
+      "@id": `${siteConfig.url}/#profile-image`,
+    },
     mainEntity: {
       "@type": "Person",
       "@id": `${siteConfig.url}/#person`,
@@ -95,6 +104,24 @@ const profileJsonLd = [
       url: `${siteConfig.url}/services/${service.slug}`,
       description: service.summary,
     })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${siteConfig.url}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Pratham Kadam",
+        item: `${siteConfig.url}/about-pratham-kadam`,
+      },
+    ],
   },
 ]
 

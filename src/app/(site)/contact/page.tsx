@@ -18,14 +18,53 @@ export const metadata: Metadata = {
     },
 };
 
-const contactJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Contact Pratham Kadam",
-    url: `${siteConfig.url}/contact`,
-    description:
-        "Contact page for freelance full stack development and SEO-ready website enquiries.",
-};
+const contactJsonLd = [
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": `${siteConfig.url}/contact#webpage`,
+        name: "Contact Pratham Kadam",
+        url: `${siteConfig.url}/contact`,
+        description:
+            "Contact page for freelance full stack development and SEO-ready website enquiries.",
+        inLanguage: siteConfig.language,
+        isPartOf: {
+            "@id": `${siteConfig.url}/#website`,
+        },
+        about: {
+            "@id": `${siteConfig.url}/#person`,
+        },
+        mainEntity: {
+            "@id": `${siteConfig.url}/#person`,
+        },
+        contactPoint: {
+            "@type": "ContactPoint",
+            email: siteConfig.email,
+            telephone: siteConfig.phone,
+            contactType: "Project enquiries",
+            areaServed: ["Ahmedabad", "Gujarat", "India", "Remote"],
+            availableLanguage: ["English", "Hindi", "Gujarati"],
+        },
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: `${siteConfig.url}/`,
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "Contact",
+                item: `${siteConfig.url}/contact`,
+            },
+        ],
+    },
+];
 
 export default function Page() {
     return (

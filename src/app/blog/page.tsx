@@ -19,18 +19,60 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  const blogJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Web development and SEO articles",
-    itemListElement: seoArticles.map((article, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: article.title,
-      url: `${siteConfig.url}/blog/${article.slug}`,
-      description: article.description,
-    })),
-  }
+  const blogJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${siteConfig.url}/blog#webpage`,
+      name: "Web development and SEO articles",
+      url: `${siteConfig.url}/blog`,
+      description:
+        "Practical web development, Next.js, business website, and technical SEO guides from Pratham Kadam.",
+      inLanguage: siteConfig.language,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: seoArticles.map((article, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "BlogPosting",
+            "@id": `${siteConfig.url}/blog/${article.slug}#article`,
+            headline: article.title,
+            url: `${siteConfig.url}/blog/${article.slug}`,
+            description: article.description,
+            datePublished: article.date,
+            author: {
+              "@id": `${siteConfig.url}/#person`,
+            },
+          },
+        })),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteConfig.url}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${siteConfig.url}/blog`,
+        },
+      ],
+    },
+  ]
 
   return (
     <>

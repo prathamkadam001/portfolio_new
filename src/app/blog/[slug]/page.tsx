@@ -66,28 +66,73 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
   }
 
   const relatedServices = serviceOfferings.slice(0, 3)
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: article.title,
-    description: article.description,
-    datePublished: article.date,
-    dateModified: article.date,
-    mainEntityOfPage: `${siteConfig.url}/blog/${article.slug}`,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
-    keywords: article.keyword,
-    inLanguage: siteConfig.language,
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
+  const articleUrl = `${siteConfig.url}/blog/${article.slug}`
+  const articleJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${articleUrl}#webpage`,
+      name: article.title,
+      url: articleUrl,
+      description: article.description,
+      inLanguage: siteConfig.language,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${articleUrl}#article`,
+      },
+      mainEntity: {
+        "@id": `${articleUrl}#article`,
+      },
     },
-    publisher: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "@id": `${articleUrl}#article`,
+      headline: article.title,
+      description: article.description,
+      datePublished: article.date,
+      dateModified: article.date,
+      mainEntityOfPage: {
+        "@id": `${articleUrl}#webpage`,
+      },
+      image: `${siteConfig.url}${siteConfig.ogImage}`,
+      keywords: [article.keyword, ...siteConfig.keywords.slice(0, 8)],
+      articleSection: "Web development and SEO",
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+      publisher: {
+        "@id": `${siteConfig.url}/#person`,
+      },
     },
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteConfig.url}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${siteConfig.url}/blog`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: article.title,
+          item: articleUrl,
+        },
+      ],
+    },
+  ]
 
   return (
     <>

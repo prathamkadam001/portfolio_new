@@ -53,25 +53,58 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     notFound()
   }
 
+  const serviceUrl = `${siteConfig.url}/services/${service.slug}`
   const serviceJsonLd = [
     {
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${serviceUrl}#webpage`,
+      name: `${service.title} | ${siteConfig.name}`,
+      url: serviceUrl,
+      description: service.description,
+      inLanguage: siteConfig.language,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${serviceUrl}#service`,
+      },
+      mainEntity: {
+        "@id": `${serviceUrl}#service`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${serviceUrl}#service`,
       name: service.title,
       description: service.description,
       serviceType: service.title,
       provider: {
-        "@type": "Person",
-        name: siteConfig.name,
-        jobTitle: siteConfig.role,
-        url: siteConfig.url,
+        "@id": `${siteConfig.url}/#person`,
+      },
+      mainEntityOfPage: {
+        "@id": `${serviceUrl}#webpage`,
       },
       areaServed: ["Ahmedabad", "Gujarat", "India", "Remote"],
-      url: `${siteConfig.url}/services/${service.slug}`,
+      url: serviceUrl,
+      offers: {
+        "@type": "Offer",
+        url: serviceUrl,
+        availability: "https://schema.org/InStock",
+        areaServed: ["Ahmedabad", "Gujarat", "India", "Remote"],
+        offeredBy: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${serviceUrl}#faq`,
+      mainEntityOfPage: {
+        "@id": `${serviceUrl}#webpage`,
+      },
       mainEntity: service.faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -80,6 +113,30 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           text: faq.answer,
         },
       })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteConfig.url}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${siteConfig.url}/services`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: service.title,
+          item: serviceUrl,
+        },
+      ],
     },
   ]
 

@@ -24,18 +24,60 @@ export const metadata: Metadata = {
   },
 }
 
-const servicesJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Full Stack Development Services",
-  itemListElement: serviceOfferings.map((service, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    name: service.title,
-    url: `${siteConfig.url}/services/${service.slug}`,
-    description: service.summary,
-  })),
-}
+const servicesJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${siteConfig.url}/services#webpage`,
+    name: "Full Stack Development Services",
+    url: `${siteConfig.url}/services`,
+    description:
+      "Full stack development services by Pratham Kadam for business websites, custom web apps, e-commerce builds, redesigns, maintenance, and technical SEO.",
+    inLanguage: siteConfig.language,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#person`,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Pratham Kadam service offerings",
+      itemListElement: serviceOfferings.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${siteConfig.url}/services/${service.slug}#service`,
+          name: service.title,
+          url: `${siteConfig.url}/services/${service.slug}`,
+          description: service.summary,
+          provider: {
+            "@id": `${siteConfig.url}/#person`,
+          },
+        },
+      })),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${siteConfig.url}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteConfig.url}/services`,
+      },
+    ],
+  },
+]
 
 export default function ServicesPage() {
   return (

@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next"
+import { llmResourceUrls, markdownDocuments } from "@/lib/llm-seo"
 import {
   featuredProjects,
   seoArticles,
@@ -7,10 +8,11 @@ import {
 } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-05-29")
+  const lastModified = new Date("2026-06-06")
   const profileImage = `${siteConfig.url}${siteConfig.ogImage}`
   const routes = [
     "/",
+    "/who-is-pratham-kadam",
     "/about-pratham-kadam",
     "/contact",
     "/my-work",
@@ -46,5 +48,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...routes, ...serviceRoutes, ...workRoutes, ...blogRoutes]
+  const aiResourceRoutes = [
+    llmResourceUrls.llmsTxt,
+    llmResourceUrls.llmsFullTxt,
+    llmResourceUrls.aiSummary,
+    llmResourceUrls.humansTxt,
+    llmResourceUrls.indexNowKey,
+  ].map((url) => ({
+    url,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }))
+
+  const markdownRoutes = markdownDocuments.map((document) => ({
+    url: `${siteConfig.url}${document.path}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: document.priority,
+  }))
+
+  return [
+    ...routes,
+    ...serviceRoutes,
+    ...workRoutes,
+    ...blogRoutes,
+    ...aiResourceRoutes,
+    ...markdownRoutes,
+  ]
 }

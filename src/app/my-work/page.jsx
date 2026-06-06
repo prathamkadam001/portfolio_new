@@ -18,22 +18,57 @@ export const metadata = {
 };
 
 export default function Home() {
-  const portfolioJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Web Development Portfolio",
-    url: `${siteConfig.url}/my-work`,
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: featuredProjects.map((project, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: project.title,
-        url: `${siteConfig.url}${project.link}`,
-        description: project.description,
-      })),
+  const portfolioJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${siteConfig.url}/my-work#webpage`,
+      name: "Web Development Portfolio",
+      url: `${siteConfig.url}/my-work`,
+      description:
+        "Selected websites and web apps built by freelance full stack developer Pratham Kadam.",
+      inLanguage: siteConfig.language,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: featuredProjects.map((project, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "CreativeWork",
+            "@id": `${siteConfig.url}${project.link}#case-study`,
+            name: project.title,
+            url: `${siteConfig.url}${project.link}`,
+            description: project.description,
+            image: `${siteConfig.url}${project.image}`,
+          },
+        })),
+      },
     },
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteConfig.url}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Work",
+          item: `${siteConfig.url}/my-work`,
+        },
+      ],
+    },
+  ];
 
   return (
     <>

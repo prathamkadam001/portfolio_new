@@ -71,23 +71,75 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
     .filter((item) => item.slug !== project.slug)
     .slice(0, 3)
 
-  const projectJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: `${project.title} Case Study`,
-    headline: `${project.title} Case Study`,
-    description: project.description,
-    image: `${siteConfig.url}${project.image}`,
-    url: `${siteConfig.url}/work/${project.slug}`,
-    inLanguage: siteConfig.language,
-    about: project.services,
-    creator: {
-      "@type": "Person",
-      name: siteConfig.name,
-      jobTitle: siteConfig.role,
-      url: siteConfig.url,
+  const projectUrl = `${siteConfig.url}/work/${project.slug}`
+  const projectJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${projectUrl}#webpage`,
+      name: `${project.title} Case Study`,
+      url: projectUrl,
+      description: project.description,
+      inLanguage: siteConfig.language,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${projectUrl}#case-study`,
+      },
+      mainEntity: {
+        "@id": `${projectUrl}#case-study`,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}${project.image}`,
+      },
     },
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "@id": `${projectUrl}#case-study`,
+      name: `${project.title} Case Study`,
+      headline: `${project.title} Case Study`,
+      description: project.description,
+      image: `${siteConfig.url}${project.image}`,
+      url: projectUrl,
+      sameAs: project.liveLink,
+      inLanguage: siteConfig.language,
+      keywords: project.tags,
+      about: project.services,
+      creator: {
+        "@id": `${siteConfig.url}/#person`,
+      },
+      mainEntityOfPage: {
+        "@id": `${projectUrl}#webpage`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteConfig.url}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Work",
+          item: `${siteConfig.url}/my-work`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: project.title,
+          item: projectUrl,
+        },
+      ],
+    },
+  ]
 
   return (
     <>
