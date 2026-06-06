@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 const profileJsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
+    "@type": "AboutPage",
     "@id": `${siteConfig.url}/about-pratham-kadam#profile-page`,
     url: `${siteConfig.url}/about-pratham-kadam`,
     name: "About Pratham Kadam",

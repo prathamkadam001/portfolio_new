@@ -89,8 +89,8 @@ const personJsonLd = {
 const answerJsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": `${pageUrl}#profile-page`,
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
     name: "Who Is Pratham Kadam?",
     url: pageUrl,
     description:
@@ -108,10 +108,17 @@ const answerJsonLd = [
   },
   {
     "@context": "https://schema.org",
+    ...personJsonLd,
+    mainEntityOfPage: {
+      "@id": `${pageUrl}#webpage`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
     mainEntityOfPage: {
-      "@id": `${pageUrl}#profile-page`,
+      "@id": `${pageUrl}#webpage`,
     },
     mainEntity: [
       {

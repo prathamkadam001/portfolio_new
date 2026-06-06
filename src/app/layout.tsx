@@ -149,7 +149,7 @@ const jsonLd = [
     sameAs: siteConfig.sameAs,
     knowsLanguage: ["English", "Hindi", "Gujarati"],
     mainEntityOfPage: {
-      "@type": "ProfilePage",
+      "@type": "WebPage",
       "@id": `${siteConfig.url}/#profile-page`,
     },
     subjectOf: [
