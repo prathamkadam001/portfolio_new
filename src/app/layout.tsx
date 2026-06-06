@@ -237,9 +237,11 @@ const jsonLd = [
         },
       },
       {
-        "@type": "Dataset",
+        "@type": "CreativeWork",
         "@id": `${llmResourceUrls.aiSummary}#ai-summary`,
         name: "Pratham Kadam AI summary",
+        description:
+          "Machine-readable AI summary for Pratham Kadam, freelance full stack developer in Ahmedabad, India.",
         url: llmResourceUrls.aiSummary,
         encodingFormat: "application/json",
         about: {
@@ -251,7 +253,6 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    additionalType: "https://schema.org/ProfilePage",
     name: siteConfig.title,
     "@id": `${siteConfig.url}/#profile-page`,
     url: siteConfig.url,

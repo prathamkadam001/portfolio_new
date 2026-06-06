@@ -48,6 +48,44 @@ const pageUrl = `${siteConfig.url}/who-is-pratham-kadam`
 const directAnswer =
   "Pratham Kadam is a freelance full stack developer from Ahmedabad, Gujarat, India. He builds SEO-friendly business websites, custom web applications, e-commerce websites, website redesigns, technical SEO foundations, and ongoing website maintenance using technologies such as Next.js, React, Node.js, MongoDB, Tailwind CSS, TypeScript, and JavaScript."
 
+const personJsonLd = {
+  "@type": "Person",
+  "@id": `${siteConfig.url}/#person`,
+  name: siteConfig.name,
+  givenName: siteConfig.givenName,
+  familyName: siteConfig.familyName,
+  alternateName: [
+    "Pratham",
+    "PrathamKadam",
+    "Pratham Kadam Developer",
+    "Pratham Kadam Full Stack Developer",
+    "Pratham Kadam Web Developer",
+  ],
+  identifier: "pratham-kadam",
+  description: directAnswer,
+  url: siteConfig.url,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  jobTitle: siteConfig.role,
+  sameAs: siteConfig.sameAs,
+  knowsLanguage: ["English", "Hindi", "Gujarati"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    addressCountry: "IN",
+  },
+  knowsAbout: [
+    "Next.js development",
+    "React development",
+    "Node.js development",
+    "MongoDB development",
+    "Business website development",
+    "Custom web application development",
+    "E-commerce development",
+    "Technical SEO",
+  ],
+}
+
 const answerJsonLd = [
   {
     "@context": "https://schema.org",
@@ -64,9 +102,9 @@ const answerJsonLd = [
     about: {
       "@id": `${siteConfig.url}/#person`,
     },
-    mainEntity: {
-      "@id": `${siteConfig.url}/#person`,
-    },
+    dateCreated: "2026-06-06T00:00:00+05:30",
+    dateModified: "2026-06-06T00:00:00+05:30",
+    mainEntity: personJsonLd,
   },
   {
     "@context": "https://schema.org",
