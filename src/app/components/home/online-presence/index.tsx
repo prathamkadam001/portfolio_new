@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-import { featuredProjects } from "@/lib/site"
+import { featuredProjects, siteConfig } from "@/lib/site"
 
 function OnlinePresence() {
   const projects = featuredProjects.slice(0, 4)
@@ -18,13 +18,22 @@ function OnlinePresence() {
               Selected projects that show real business use cases.
             </h2>
           </div>
-          <Link
-            href="/my-work"
-            className="inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
-          >
-            View all projects
-            <ArrowUpRight className="size-5" />
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={siteConfig.businessWebsitePath}
+              className="inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            >
+              Start similar website
+              <ArrowUpRight className="size-5" />
+            </Link>
+            <Link
+              href="/my-work"
+              className="inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
+            >
+              View all projects
+              <ArrowUpRight className="size-5" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">

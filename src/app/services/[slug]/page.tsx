@@ -1,9 +1,19 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { notFound } from "next/navigation"
-import { ArrowUpRight, CheckCircle2, MessageCircle } from "lucide-react"
-import { getServiceBySlug, serviceOfferings, siteConfig } from "@/lib/site"
+import { notFound, permanentRedirect } from "next/navigation"
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  MessageCircle,
+  PhoneCall,
+} from "lucide-react"
+import {
+  getServiceBySlug,
+  serviceOfferings,
+  siteConfig,
+  whatsappContactUrl,
+} from "@/lib/site"
 
 type ServicePageProps = {
   params: Promise<{
@@ -25,6 +35,16 @@ export async function generateMetadata({
 
   if (!service) {
     return {}
+  }
+
+  if (service.slug === "business-website-development") {
+    return {
+      title: "Business Website Developer in Ahmedabad",
+      description: service.description,
+      alternates: {
+        canonical: siteConfig.businessWebsitePath,
+      },
+    }
   }
 
   return {
@@ -51,6 +71,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   if (!service) {
     notFound()
+  }
+
+  if (service.slug === "business-website-development") {
+    permanentRedirect(siteConfig.businessWebsitePath)
   }
 
   const serviceUrl = `${siteConfig.url}/services/${service.slug}`
@@ -170,6 +194,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 >
                   View project work
                   <ArrowUpRight className="size-5" />
+                </Link>
+                <Link
+                  href={whatsappContactUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
+                >
+                  <PhoneCall className="size-5" />
+                  WhatsApp
                 </Link>
               </div>
             </div>

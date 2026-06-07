@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, MessageCircle } from "lucide-react"
-import { serviceCards } from "@/lib/site"
+import { serviceCards, siteConfig } from "@/lib/site"
 
 function Innovation() {
   return (
@@ -13,15 +13,16 @@ function Innovation() {
               Services
             </p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
-              Web development services made for search, speed, and sales.
+              Business websites, web apps, and SEO improvements made for
+              search, speed, and sales.
             </h2>
           </div>
           <Link
-            href="/contact"
+            href={siteConfig.businessWebsitePath}
             className="inline-flex min-h-12 w-fit items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
           >
             <MessageCircle className="size-5" />
-            Discuss your project
+            Start a business website
           </Link>
         </div>
 

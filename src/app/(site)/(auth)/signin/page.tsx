@@ -1,21 +1,14 @@
-
-import Signin from "@/app/components/auth/sign-in";
-import { Metadata } from "next";
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Sign In | Pratham Kadam",
+  title: "Page Not Found | Pratham Kadam",
   robots: {
     index: false,
     follow: false,
   },
-};
+}
 
-const SigninPage = () => {
-  return (
-    <>
-      <Signin />
-    </>
-  );
-};
-
-export default SigninPage;
+export default function SigninPage() {
+  notFound()
+}

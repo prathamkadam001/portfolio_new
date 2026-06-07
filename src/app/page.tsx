@@ -9,14 +9,16 @@ import TechTools from "./components/home/TechTools/TechTools";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
-  description: siteConfig.description,
+  title: "Pratham Kadam - Business Website Developer in Ahmedabad",
+  description:
+    "Pratham Kadam is a freelance business website developer in Ahmedabad building SEO-ready websites, service pages, contact flows, and custom web apps with Next.js, React, Node.js, and MongoDB.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
-    description: siteConfig.description,
+    title: "Pratham Kadam - Business Website Developer in Ahmedabad",
+    description:
+      "SEO-ready business websites, service pages, contact flows, and custom web apps by Pratham Kadam, freelance developer in Ahmedabad.",
     url: "/",
     images: [
       {
@@ -28,8 +30,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad",
-    description: siteConfig.description,
+    title: "Pratham Kadam - Business Website Developer in Ahmedabad",
+    description:
+      "SEO-ready business websites, service pages, contact flows, and custom web apps by Pratham Kadam, freelance developer in Ahmedabad.",
     images: [siteConfig.ogImage],
   },
 };

@@ -1,26 +1,26 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight, MessageCircle } from "lucide-react"
-import { serviceOfferings, siteConfig } from "@/lib/site"
+import { ArrowUpRight, MessageCircle, PhoneCall } from "lucide-react"
+import { serviceOfferings, siteConfig, whatsappContactUrl } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Full Stack Development Services",
   description:
-    "Explore full stack development services by Pratham Kadam including business websites, custom web apps, e-commerce builds, redesigns, maintenance, and technical SEO improvements.",
+    "Explore business website development, custom web apps, e-commerce builds, redesigns, maintenance, and technical SEO services by Pratham Kadam in Ahmedabad.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Full Stack Development Services | Pratham Kadam",
     description:
-      "Business websites, web apps, e-commerce builds, redesigns, maintenance, and technical SEO support for growing brands.",
+      "Business websites, web apps, e-commerce builds, redesigns, maintenance, and technical SEO support for Ahmedabad and India-based businesses.",
     url: "/services",
   },
   twitter: {
     title: "Full Stack Development Services | Pratham Kadam",
     description:
-      "Business websites, web apps, e-commerce builds, redesigns, maintenance, and technical SEO support for growing brands.",
+      "Business websites, web apps, e-commerce builds, redesigns, maintenance, and technical SEO support for Ahmedabad and India-based businesses.",
   },
 }
 
@@ -89,28 +89,30 @@ export default function ServicesPage() {
               Services
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
-              Full stack development services for businesses that need better
-              websites, better UX, and better search visibility.
+              Website development services for businesses that need better
+              enquiries, better UX, and better search visibility.
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-              I help businesses build and improve websites, custom web apps,
-              e-commerce experiences, and SEO foundations using Next.js, React,
-              Node.js, and modern frontend tooling.
+              I help businesses build and improve business websites, custom web
+              apps, e-commerce experiences, and SEO foundations using Next.js,
+              React, Node.js, and modern frontend tooling.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href={siteConfig.businessWebsitePath}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
               >
                 <MessageCircle className="size-5" />
-                Start a project
+                Start a business website
               </Link>
               <Link
-                href="/my-work"
+                href={whatsappContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
               >
-                View work
-                <ArrowUpRight className="size-5" />
+                <PhoneCall className="size-5" />
+                WhatsApp Pratham
               </Link>
             </div>
           </div>
@@ -152,10 +154,16 @@ export default function ServicesPage() {
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={
+                      service.slug === "business-website-development"
+                        ? siteConfig.businessWebsitePath
+                        : `/services/${service.slug}`
+                    }
                     className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 py-2 font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
                   >
-                    View details
+                    {service.slug === "business-website-development"
+                      ? "Start here"
+                      : "View details"}
                     <ArrowUpRight className="size-4" />
                   </Link>
                   <Link

@@ -1,20 +1,14 @@
-import SignUp from "@/app/components/auth/sign-up";
-import { Metadata } from "next";
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Sign Up | Pratham Kadam",
+  title: "Page Not Found | Pratham Kadam",
   robots: {
     index: false,
     follow: false,
   },
-};
+}
 
-const SignupPage = () => {
-  return (
-    <>
-      <SignUp />
-    </>
-  );
-};
-
-export default SignupPage;
+export default function SignupPage() {
+  notFound()
+}

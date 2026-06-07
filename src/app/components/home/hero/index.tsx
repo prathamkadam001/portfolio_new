@@ -1,6 +1,17 @@
 import Link from "next/link"
-import { ArrowUpRight, CheckCircle2, MapPin, MessageCircle } from "lucide-react"
-import { heroHighlights, siteConfig, trustMetrics } from "@/lib/site"
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  MapPin,
+  MessageCircle,
+  PhoneCall,
+} from "lucide-react"
+import {
+  heroHighlights,
+  siteConfig,
+  trustMetrics,
+  whatsappContactUrl,
+} from "@/lib/site"
 import LazyPortfolioScene from "./LazyPortfolioScene"
 
 function HeroSection() {
@@ -19,22 +30,24 @@ function HeroSection() {
           </div>
 
           <h1 className="hero-entrance hero-entrance-delay-1 mt-7 max-w-4xl text-4xl font-semibold leading-none tracking-normal text-slate-950 dark:text-white sm:text-5xl md:text-6xl">
-            Pratham Kadam - Freelance Full Stack Developer in Ahmedabad.
+            Business website developer in Ahmedabad for websites that bring
+            enquiries.
           </h1>
 
           <p className="hero-entrance hero-entrance-delay-2 mt-7 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
-            I build SEO-friendly business websites, custom web apps, and
-            e-commerce experiences with Next.js, React, Node.js, MongoDB, and a
-            conversion-first structure.
+            I am Pratham Kadam, a freelance full stack developer helping local
+            businesses, institutes, manufacturers, and product companies build
+            SEO-ready websites with Next.js, React, clear service pages, and a
+            conversion-first contact flow.
           </p>
 
-          <div className="hero-entrance hero-entrance-delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="hero-entrance hero-entrance-delay-3 mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/contact"
+              href={siteConfig.businessWebsitePath}
               className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
             >
               <MessageCircle className="size-5" />
-              Book a project call
+              Start a business website
             </Link>
             <Link
               href="/my-work"
@@ -42,6 +55,15 @@ function HeroSection() {
             >
               See client work
               <ArrowUpRight className="size-5" />
+            </Link>
+            <Link
+              href={whatsappContactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white/70 px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
+            >
+              <PhoneCall className="size-5" />
+              WhatsApp
             </Link>
           </div>
 

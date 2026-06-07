@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react"
 import { useState } from "react"
-import { siteConfig } from "@/lib/site"
+import { siteConfig, whatsappContactUrl } from "@/lib/site"
 
 type FormData = {
   name: string
@@ -84,7 +84,9 @@ function ContactForm() {
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">
               Share what you need, what is currently blocking you, and how soon
-              you want to launch. I will reply with the best next step.
+              you want to launch. For business website projects, include your
+              current website or business type so I can reply with the best next
+              step.
             </p>
 
             <div className="mt-8 grid gap-3">
@@ -101,6 +103,15 @@ function ContactForm() {
               >
                 <Phone className="size-5 text-teal-700 dark:text-teal-300" />
                 {siteConfig.phone}
+              </Link>
+              <Link
+                href={whatsappContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+              >
+                <MessageCircle className="size-5 text-teal-700 dark:text-teal-300" />
+                WhatsApp for a business website
               </Link>
               <div className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
                 <MapPin className="size-5 text-teal-700 dark:text-teal-300" />

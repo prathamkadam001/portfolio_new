@@ -1,110 +1,94 @@
-import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "Terms and Conditions | Pratham Kadam",
-    robots: {
-        index: false,
-        follow: true,
-    },
-};
+import type { Metadata } from "next"
+import Link from "next/link"
+import { siteConfig } from "@/lib/site"
 
-export default function Page() {
-    return (
-        <section>
-            <div
-                className="relative w-full pt-44 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-blue_gradient before:via-white before:to-yellow_gradient before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-dark_blue_gradient dark:before:via-black dark:before:to-dark_yellow_gradient dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10"
-            >
-                <div className="container relative z-10">
-                    <div className='flex flex-col gap-5'>
-                        <h1 className='md:text-6xl text-4xl font-medium text-center'>
-                            Terms & Conditions
-                        </h1>
-                        <div className="bg-white dark:bg-dark_black p-8 rounded-2xl">
-                            <p>
-                                This Getnextjstemplates Terms of Service (“<span className="font-semibold">Agreement</span>”) is entered into by and between Getnextjstemplates (“<span className="font-semibold">Getnextjstemplates</span>”) and the entity or person placing an order for or accessing the Services (“<span className="font-semibold">Customer</span>”). This Agreement consists of the terms and conditions set forth below and any Order Form. The “<span className="font-semibold">Effective Date”</span> of this Agreement is the date which is the earlier of (a) Customer’s initial access to the Services through any online provisioning, registration or order process or (b) the Effective Date of the first Order Form. This Agreement will govern Customer’s initial purchase on the Effective Date as well as any future purchases made by Customer that reference this Agreement. Getnextjstemplates may modify this Agreement from time to time as permitted in Section 13.4 (Amendment).
-                            </p>
-                            <p className="mt-5">
-                                Capitalized terms shall have the meanings set forth in Section 1, or in the section where they are first used
-                            </p>
-                            <div className="my-6">
-                                <h4 className="font-semibold">1. Definitions</h4>
-                                <ul className="mt-6">
-                                    <li>
-                                        <p>
-                                            <span className="font-semibold">1.1 “Authorized Devices”</span>
-                                            means those mobile, desktop, or other devices with which the Services can be accessed and used.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">1.2 “Content”</span>
-                                            means code, content, fonts, graphics, designs, documents, or materials created using the Services by Customer and its Users or imported into the Services by Customer and its Users.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p><span className="font-semibold">1.3 “Documentation”</span>
-                                            means the technical materials made available by Getnextjstemplates to Customer and/or its Users in hard copy or electronic form describing the use and operation of the Services.</p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">1.4 “Services”</span>
-                                            Getnextjstemplates’s proprietary web-based products and services, along with downloadable desktop and mobile apps. Each Order Form will identify details of Customer’s Services subscription.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">
-                                                1.5 “Order Form”
-                                            </span>
-                                            means a document signed by both Parties identifying the Enterprise Services to be made available by Getnextjstemplates pursuant to this Agreement.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">1.6 “Packages”</span>
-                                            or
-                                            <span className="font-semibold">
-                                                “Components”
-                                            </span>
-                                            means add-on modules made available within the Services. Packages and Components may be created by Getnextjstemplates, Customer or other third parties. Packages and Components created by Getnextjstemplates are supported as part of the Services. Getnextjstemplates will use reasonable efforts to support Customer’s use of Packages and Components created by third parties but disclaims all warranties as to such Packages and Components.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">
-                                                1.7 “User”
-                                            </span>
-                                            means an employee, contractor or other individual associated with Customer who has been provisioned by Customer with access to the Services.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">1.8 “Services”</span>
-                                            means Getnextjstemplates’s SaaS product, web design software, tools, along with downloadable desktop and mobile apps. Each Order Form will identify details of Customer’s subscription to the Services.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="my-6">
-                                <h4 className="font-semibold">2. License and use rights</h4>
-                                <ul className="mt-6">
-                                    <li>
-                                        <p>
-                                            <span className="font-semibold">2.1 Services</span>{" "}
-                                            Getnextjstemplates hereby grants Customer a non-exclusive, non-transferable license during the Term (as defined in Section 12) to: (a) use the Services and to download and install desktop or mobile applications as applicable on the number and type of Authorized Devices solely for Customer’s internal business purposes in accordance with the Documentation, and/or (b) use our SaaS product, hosted systems, design software, tools, and build websites under the Getnextjstemplates.app domain.. The Services are delivered electronically.
-                                        </p>
-                                    </li>
-                                    <li className="mt-5">
-                                        <p>
-                                            <span className="font-semibold">2.2 Provisioning the Services</span>{" "}
-                                            Getnextjstemplates will provide to Customer the necessary passwords, security protocols, policies, network links or connections (“Access Protocols”) to allow Customer and its Users to access the Services as described herein; no other access to the website or servers from which the Services are delivered is permitted. Customer will provision its Users  to access and use the features and functions of the Services through the Access Protocols. Customer may select one or more Users to act as administrators and control, manage and use the Services on Customer’s behalf. Customer shall be responsible for all acts and omissions of its Users
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
+export const metadata: Metadata = {
+  title: "Terms and Conditions | Pratham Kadam",
+  description:
+    "Terms and conditions for using Pratham Kadam's portfolio website and submitting project enquiries.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+}
+
+export default function TermsAndConditionsPage() {
+  return (
+    <main className="bg-[#f7fbff] pt-36 pb-20 dark:bg-[#06101f]">
+      <section className="container">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
+            Legal
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold text-slate-950 dark:text-white md:text-6xl">
+            Terms and Conditions
+          </h1>
+          <p className="mt-5 leading-8 text-slate-700 dark:text-slate-300">
+            This website presents the portfolio, services, projects, and contact
+            details of {siteConfig.name}. By using this site or submitting an
+            enquiry, you agree to use it for lawful and genuine communication.
+          </p>
+
+          <div className="mt-10 grid gap-6">
+            <article className="rounded-lg border border-slate-900/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a1728]">
+              <h2 className="text-2xl font-semibold text-slate-950 dark:text-white">
+                Website content
+              </h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                Content on this website is provided for general information
+                about freelance website development, web applications,
+                e-commerce, redesign, maintenance, and technical SEO services.
+                Project scope, timelines, pricing, and deliverables are agreed
+                separately before work begins.
+              </p>
+            </article>
+
+            <article className="rounded-lg border border-slate-900/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a1728]">
+              <h2 className="text-2xl font-semibold text-slate-950 dark:text-white">
+                Project enquiries
+              </h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                Submitting a form, email, phone call, or WhatsApp message does
+                not create a client relationship by itself. A project starts
+                only after both sides agree on scope, responsibilities,
+                schedule, and payment terms.
+              </p>
+            </article>
+
+            <article className="rounded-lg border border-slate-900/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a1728]">
+              <h2 className="text-2xl font-semibold text-slate-950 dark:text-white">
+                Search and business results
+              </h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                SEO-friendly implementation can improve a website's foundation,
+                but search rankings, traffic, and enquiries depend on many
+                factors including content quality, indexing, competition,
+                backlinks, business reputation, and ongoing promotion. No exact
+                ranking or revenue result is guaranteed.
+              </p>
+            </article>
+
+            <article className="rounded-lg border border-slate-900/10 bg-white p-6 dark:border-white/10 dark:bg-[#0a1728]">
+              <h2 className="text-2xl font-semibold text-slate-950 dark:text-white">
+                Contact
+              </h2>
+              <p className="mt-3 leading-8 text-slate-700 dark:text-slate-300">
+                For questions about these terms, contact{" "}
+                <Link
+                  href={`mailto:${siteConfig.email}`}
+                  className="font-semibold text-teal-700 dark:text-teal-300"
+                >
+                  {siteConfig.email}
+                </Link>
+                .
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}

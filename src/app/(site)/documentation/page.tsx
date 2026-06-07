@@ -1,17 +1,14 @@
-import { Documentation } from '@/app/components/documentation/Documentation'
-import { Metadata } from 'next'
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+
 export const metadata: Metadata = {
-  title: 'Documentation | Pratham Kadam',
+  title: "Page Not Found | Pratham Kadam",
   robots: {
     index: false,
     follow: false,
   },
 }
 
-export default function Page() {
-  return (
-    <>
-      <Documentation />
-    </>
-  )
+export default function DocumentationPage() {
+  notFound()
 }

@@ -4,9 +4,9 @@ export const siteConfig = {
   givenName: "Pratham",
   familyName: "Kadam",
   role: "Freelance Full Stack Developer",
-  title: "Pratham Kadam - Freelance Full Stack Developer in Ahmedabad, India",
+  title: "Pratham Kadam - Business Website Developer in Ahmedabad, India",
   description:
-    "Official portfolio website of Pratham Kadam, a freelance full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO foundations with Next.js, React, Node.js, and MongoDB.",
+    "Official portfolio website of Pratham Kadam, a freelance business website developer and full stack developer in Ahmedabad, India, building SEO-friendly business websites, custom web apps, e-commerce stores, website redesigns, and technical SEO foundations with Next.js, React, Node.js, and MongoDB.",
   url: "https://prathamkadam.netlify.app",
   locale: "en_IN",
   language: "en-IN",
@@ -14,6 +14,8 @@ export const siteConfig = {
   phone: "+91 8128293873",
   location: "Ahmedabad, Gujarat, India",
   availability: "Available for freelance projects",
+  primaryOffer: "Business Website Development",
+  businessWebsitePath: "/business-website-developer-ahmedabad",
   ogImage: "/images/owner/pratham-kadam-full-stack-developer-ahmedabad.png",
   ogImageAlt:
     "Pratham Kadam, freelance full stack developer from Ahmedabad, Gujarat, India",
@@ -35,6 +37,10 @@ export const siteConfig = {
     "Node.js developer",
     "MongoDB developer",
     "web developer in Ahmedabad",
+    "business website developer in Ahmedabad",
+    "freelance website developer Ahmedabad",
+    "website developer for small business India",
+    "small business website developer Ahmedabad",
     "business website development",
     "custom web application development",
     "e-commerce website development",
@@ -67,40 +73,46 @@ export const serviceOfferings = [
     title: "Business Website Development",
     shortTitle: "Business Websites",
     summary:
-      "Fast, modern websites for startups, agencies, institutes, and local businesses that need stronger online visibility.",
+      "Fast, SEO-ready websites for Ahmedabad businesses that need trust, Google visibility, and more enquiries.",
     description:
-      "I build business websites that are fast, mobile-friendly, easy to manage, and structured for search visibility and lead generation.",
+      "I build business websites for local businesses, institutes, manufacturers, consultants, agencies, and product companies that need a professional online presence, clear service pages, and enquiry-focused structure.",
     icon: "/images/home/innovation/webdevp.svg",
     bgColor: "bg-pink/20",
     textColor: "text-pink",
     idealFor: [
-      "Local businesses that need a credible online presence",
-      "Startups launching a new product or service",
-      "Agencies and consultants who need more inbound leads",
+      "Ahmedabad businesses that need a stronger website before running outreach or ads",
+      "Institutes, manufacturers, consultants, and agencies that need service pages built for enquiries",
+      "Small businesses replacing an outdated, slow, or unclear website",
     ],
     deliverables: [
       "Custom UI built with Next.js and React",
       "Responsive pages for mobile, tablet, and desktop",
       "Clear calls to action and contact flow",
-      "On-page SEO setup with metadata and schema basics",
+      "On-page SEO setup with metadata, headings, schema, sitemap, and image alt text",
+      "Business-focused copy structure for services, proof, FAQs, and enquiry sections",
       "Deployment-ready build with performance focus",
     ],
     process: [
-      "Understand the business, audience, and conversion goal",
-      "Plan page structure and content sections",
-      "Build a responsive frontend with clean code",
-      "Add SEO essentials, forms, and launch support",
+      "Understand your business, location, audience, and enquiry goal",
+      "Plan a homepage, service pages, proof sections, FAQs, and contact flow",
+      "Build the responsive website with clean Next.js and React implementation",
+      "Add SEO essentials, forms, WhatsApp/email CTAs, and launch support",
     ],
     faqs: [
       {
-        question: "Do you build custom designs or use templates?",
+        question: "Can you build a website for my Ahmedabad business?",
         answer:
-          "I can work with a reference design, your existing brand direction, or create a custom interface tailored to your business goals.",
+          "Yes. I build business websites for Ahmedabad and India-based businesses that need a clearer online presence, stronger service pages, and better enquiry flow.",
       },
       {
         question: "Will the website be SEO-ready?",
         answer:
           "Yes. I set up metadata, semantic structure, performance-friendly pages, indexing files, and a clear internal linking structure.",
+      },
+      {
+        question: "Can you redesign my existing business website?",
+        answer:
+          "Yes. I can rebuild or improve an existing website with clearer copy, mobile-friendly layouts, technical SEO basics, faster pages, and better contact actions.",
       },
     ],
   },
@@ -281,8 +293,18 @@ export const serviceCards = serviceOfferings.map((service) => ({
   icon: service.icon,
   bgColor: service.bgColor,
   textColor: service.textColor,
-  href: `/services/${service.slug}`,
+  href:
+    service.slug === "business-website-development"
+      ? siteConfig.businessWebsitePath
+      : `/services/${service.slug}`,
 }))
+
+export const whatsappContactUrl = `https://wa.me/${siteConfig.phone.replace(
+  /\D/g,
+  ""
+)}?text=${encodeURIComponent(
+  "Hi Pratham, I want to discuss a business website project."
+)}`
 
 export const featuredProjects = [
   {
@@ -549,10 +571,10 @@ export const seoArticles = [
 ]
 
 export const heroHighlights = [
-  "SEO-ready business websites",
-  "Custom dashboards and web apps",
-  "E-commerce and product catalogs",
-  "Technical SEO and speed cleanup",
+  "Business websites for Ahmedabad and India",
+  "Service pages built for enquiries",
+  "SEO metadata, schema, and sitemap setup",
+  "Contact form, email, and WhatsApp CTAs",
 ]
 
 export const trustMetrics = [
@@ -591,6 +613,7 @@ export const footerData = {
     name: "Sitemap",
     links: [
       { name: "Home", url: "/" },
+      { name: "Business Websites", url: siteConfig.businessWebsitePath },
       { name: "About", url: "/about-pratham-kadam" },
       { name: "Services", url: "/services" },
       { name: "Work", url: "/my-work" },

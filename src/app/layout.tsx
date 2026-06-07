@@ -3,6 +3,7 @@ import "./globals.css"
 import Header from "./components/layout/header"
 import Footer from "./components/layout/footer/Footer"
 import ScrollToTop from "./components/scroll-to-top"
+import StickyMobileCTA from "./components/sticky-mobile-cta"
 import Providers from "./providers"
 import { featuredProjects, serviceOfferings, siteConfig } from "@/lib/site"
 import { llmResourceUrls } from "@/lib/llm-seo"
@@ -119,6 +120,7 @@ const jsonLd = [
       "Pratham Kadam Developer",
       "Pratham Kadam Full Stack Developer",
       "Pratham Kadam Web Developer",
+      "Pratham Kadam Business Website Developer",
     ],
     url: siteConfig.url,
     image: {
@@ -162,13 +164,14 @@ const jsonLd = [
       "Node.js development",
       "Technical SEO",
       "Business website development",
+      "Business website developer in Ahmedabad",
       "E-commerce development",
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: `${siteConfig.name} - Freelance Full Stack Developer`,
+    name: `${siteConfig.name} - Business Website Developer in Ahmedabad`,
     "@id": `${siteConfig.url}/#professional-service`,
     url: siteConfig.url,
     image: profileImageUrl,
@@ -192,7 +195,10 @@ const jsonLd = [
           "@type": "Service",
           name: service.title,
           description: service.summary,
-          url: `${siteConfig.url}/services/${service.slug}`,
+          url:
+            service.slug === "business-website-development"
+              ? `${siteConfig.url}${siteConfig.businessWebsitePath}`
+              : `${siteConfig.url}/services/${service.slug}`,
         },
       })),
     },
@@ -272,6 +278,7 @@ const jsonLd = [
     },
     significantLink: [
       `${siteConfig.url}/who-is-pratham-kadam`,
+      `${siteConfig.url}${siteConfig.businessWebsitePath}`,
       `${siteConfig.url}/about-pratham-kadam`,
       `${siteConfig.url}/services`,
       `${siteConfig.url}/my-work`,
@@ -318,12 +325,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" suppressHydrationWarning>
-      <body>
+      <body className="pb-20 md:pb-0">
         <Providers>
           <Header />
           {children}
           <Footer />
           <ScrollToTop />
+          <StickyMobileCTA />
         </Providers>
         <script
           type="application/ld+json"

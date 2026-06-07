@@ -39,8 +39,16 @@ function WebResult() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
               {siteConfig.name} helps businesses turn their website into a
               stronger sales asset: easier to understand, easier to index, and
-              easier for clients to contact.
+              easier for customers to contact through forms, email, and
+              WhatsApp.
             </p>
+            <Link
+              href={siteConfig.businessWebsitePath}
+              className="mt-7 inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+            >
+              Start a business website
+              <ArrowUpRight className="size-5" />
+            </Link>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">

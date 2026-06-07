@@ -7,6 +7,7 @@ import HeaderLink from "./Navigation/HeaderLink"
 import { headerData } from "./Navigation/Menudata"
 import MobileHeader from "./Navigation/MobileHeader"
 import ThemeToggler from "./ThemeToggle"
+import { siteConfig } from "@/lib/site"
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -54,11 +55,11 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <ThemeToggler />
             <Link
-              href="/contact"
+              href={siteConfig.businessWebsitePath}
               className="hidden min-h-10 items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 md:inline-flex"
             >
               <MessageCircle className="size-4" />
-              Hire me
+              Start website
             </Link>
             <button
               type="button"
@@ -116,12 +117,12 @@ const Header = () => {
           </ul>
         </nav>
         <Link
-          href="/contact"
+          href={siteConfig.businessWebsitePath}
           onClick={() => setSidebarOpen(false)}
           className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white dark:bg-white dark:text-slate-950"
         >
           <MessageCircle className="size-5" />
-          Book a project call
+          Start a business website
         </Link>
       </aside>
     </header>

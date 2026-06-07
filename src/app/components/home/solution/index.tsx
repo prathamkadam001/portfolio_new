@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { ArrowUpRight, MessageCircle } from "lucide-react"
-import { siteConfig } from "@/lib/site"
+import { ArrowUpRight, MessageCircle, PhoneCall } from "lucide-react"
+import { siteConfig, whatsappContactUrl } from "@/lib/site"
 
 function Solutions() {
   return (
@@ -14,22 +14,31 @@ function Solutions() {
                 Ready for clients
               </p>
               <h2 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-white md:text-6xl">
-                Want Google visibility and better enquiries? Let us make your
-                website easier to find and easier to trust.
+                Need a business website that is easier to find, easier to
+                trust, and easier to contact from?
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-                Send your project details to {siteConfig.name}. I will review
-                the goal, page structure, tech stack, SEO basics, and the best
-                next step.
+                Send your website idea or current site to {siteConfig.name}. I
+                will review the business goal, page structure, SEO basics,
+                contact flow, and the best next step.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link
-                href="/contact"
+                href={siteConfig.businessWebsitePath}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200"
               >
                 <MessageCircle className="size-5" />
-                Start a project
+                Start a business website
+              </Link>
+              <Link
+                href={whatsappContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-white/20 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/45"
+              >
+                <PhoneCall className="size-5" />
+                WhatsApp now
               </Link>
               <Link
                 href="/services"

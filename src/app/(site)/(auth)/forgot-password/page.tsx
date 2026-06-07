@@ -1,21 +1,14 @@
-
-import ForgotPassword from "@/app/components/auth/forgot-password";
-import { Metadata } from "next";
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Forgot Password | Pratham Kadam",
+  title: "Page Not Found | Pratham Kadam",
   robots: {
     index: false,
     follow: false,
   },
-};
+}
 
-const ForgotPasswordPage = () => {
-  return (
-    <>
-      <ForgotPassword />
-    </>
-  );
-};
-
-export default ForgotPasswordPage;
+export default function ForgotPasswordPage() {
+  notFound()
+}
