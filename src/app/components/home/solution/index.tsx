@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { ArrowUpRight, MessageCircle, PhoneCall } from "lucide-react"
 import { siteConfig, whatsappContactUrl } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 function Solutions() {
   return (
@@ -24,22 +26,26 @@ function Solutions() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link
+              <TrackedLink
                 href={siteConfig.businessWebsitePath}
+                eventName={analyticsEvents.businessWebsiteCtaClick}
+                eventParams={{ location: "home_solution" }}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200"
               >
                 <MessageCircle className="size-5" />
                 Start a business website
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={whatsappContactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                eventName={analyticsEvents.whatsappClick}
+                eventParams={{ location: "home_solution" }}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-white/20 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/45"
               >
                 <PhoneCall className="size-5" />
                 WhatsApp now
-              </Link>
+              </TrackedLink>
               <Link
                 href="/services"
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-white/20 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/45"

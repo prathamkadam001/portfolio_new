@@ -3,6 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, MessageCircle, PhoneCall } from "lucide-react"
 import { serviceOfferings, siteConfig, whatsappContactUrl } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 export const metadata: Metadata = {
   title: "Full Stack Development Services",
@@ -98,22 +100,26 @@ export default function ServicesPage() {
               React, Node.js, and modern frontend tooling.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link
+              <TrackedLink
                 href={siteConfig.businessWebsitePath}
+                eventName={analyticsEvents.businessWebsiteCtaClick}
+                eventParams={{ location: "services_page_hero" }}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
               >
                 <MessageCircle className="size-5" />
                 Start a business website
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={whatsappContactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                eventName={analyticsEvents.whatsappClick}
+                eventParams={{ location: "services_page_hero" }}
                 className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
               >
                 <PhoneCall className="size-5" />
                 WhatsApp Pratham
-              </Link>
+              </TrackedLink>
             </div>
           </div>
 
@@ -166,12 +172,17 @@ export default function ServicesPage() {
                       : "View details"}
                     <ArrowUpRight className="size-4" />
                   </Link>
-                  <Link
+                  <TrackedLink
                     href="/contact"
+                    eventName={analyticsEvents.contactClick}
+                    eventParams={{
+                      location: "services_page_service_card",
+                      service: service.slug,
+                    }}
                     className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-900/15 px-4 py-2 font-semibold text-slate-950 transition hover:border-slate-900/35 dark:border-white/15 dark:text-white dark:hover:border-white/35"
                   >
                     Start a project
-                  </Link>
+                  </TrackedLink>
                 </div>
               </article>
             ))}

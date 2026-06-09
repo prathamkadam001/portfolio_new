@@ -14,6 +14,8 @@ import {
   siteConfig,
   whatsappContactUrl,
 } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 type ServicePageProps = {
   params: Promise<{
@@ -181,13 +183,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
+                <TrackedLink
                   href="/contact"
+                  eventName={analyticsEvents.contactClick}
+                  eventParams={{ location: "service_detail_hero" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
                 >
                   <MessageCircle className="size-5" />
                   Book a project discussion
-                </Link>
+                </TrackedLink>
                 <Link
                   href="/my-work"
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
@@ -195,15 +199,17 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   View project work
                   <ArrowUpRight className="size-5" />
                 </Link>
-                <Link
+                <TrackedLink
                   href={whatsappContactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  eventName={analyticsEvents.whatsappClick}
+                  eventParams={{ location: "service_detail_hero" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
                 >
                   <PhoneCall className="size-5" />
                   WhatsApp
-                </Link>
+                </TrackedLink>
               </div>
             </div>
 

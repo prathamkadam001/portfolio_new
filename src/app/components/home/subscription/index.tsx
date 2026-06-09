@@ -1,10 +1,12 @@
 "use client";
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react';
+import TrackedLink from '@/app/components/tracked-link';
+import { analyticsEvents } from '@/lib/analytics';
+import type { startupPlan } from '@/app/types/menu';
 
 function Subscription() {
-  const [startupPlanList, setstartupPlanList] = useState<any>(null);
+  const [startupPlanList, setstartupPlanList] = useState<startupPlan[] | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,7 +36,7 @@ function Subscription() {
               </h2>
             </div>
             <div className='grid grid-cols-1 xxl:grid-cols-2 gap-6'>
-              {startupPlanList?.map((items: any, index: number) => (
+              {startupPlanList?.map((items: startupPlan, index: number) => (
                 <div
                   className={`${items.plan_bg_color} p-6 md:p-10 rounded-2xl`}
                   key={index}>
@@ -57,8 +59,10 @@ function Subscription() {
                             /month
                           </span>
                         </h2>
-                        <Link
+                        <TrackedLink
                           href='/contact'
+                          eventName={analyticsEvents.contactClick}
+                          eventParams={{ location: 'subscription_plan_card' }}
                           className='group text-dark_black font-medium bg-white rounded-full flex items-center gap-4 py-2 pl-5 pr-2 w-fit '>
                           <span className='group-hover:translate-x-9 transform transition-transform duration-200 ease-in-out'>
                             Let’s Collaborate
@@ -84,14 +88,14 @@ function Subscription() {
                               strokeLinejoin='round'
                             />
                           </svg>
-                        </Link>
+                        </TrackedLink>
                       </div>
                     </div>
                     <div
                       className={`flex flex-col gap-4 md:pl-6 md:border-l ${items.border_color}`}>
                       <p className={`${items.text_color}`}>Features</p>
                       <ul className='flex flex-col gap-4'>
-                        {items.plan_feature?.map((feature: any, index: number) => {
+                        {items.plan_feature?.map((feature: string, index: number) => {
                           return (
                             <li key={index} className='flex items-center gap-3'>
                               <Image

@@ -8,6 +8,8 @@ import { headerData } from "./Navigation/Menudata"
 import MobileHeader from "./Navigation/MobileHeader"
 import ThemeToggler from "./ThemeToggle"
 import { siteConfig } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -69,13 +71,15 @@ const Header = () => {
 
           <div className="flex items-center gap-2">
             <ThemeToggler />
-            <Link
+            <TrackedLink
               href={siteConfig.businessWebsitePath}
+              eventName={analyticsEvents.businessWebsiteCtaClick}
+              eventParams={{ location: "header" }}
               className="hidden min-h-10 items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 md:inline-flex"
             >
               <MessageCircle className="size-4" />
               Start website
-            </Link>
+            </TrackedLink>
             <button
               type="button"
               className="grid size-10 place-items-center rounded-lg border border-slate-900/10 text-slate-950 dark:border-white/10 dark:text-white lg:hidden"
@@ -135,14 +139,16 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <Link
+        <TrackedLink
           href={siteConfig.businessWebsitePath}
           onClick={() => setSidebarOpen(false)}
+          eventName={analyticsEvents.businessWebsiteCtaClick}
+          eventParams={{ location: "mobile_menu" }}
           className="mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white dark:bg-white dark:text-slate-950"
         >
           <MessageCircle className="size-5" />
           Start a business website
-        </Link>
+        </TrackedLink>
       </aside>
     </header>
   )

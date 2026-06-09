@@ -4,6 +4,8 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowUpRight, CheckCircle2, MessageCircle } from "lucide-react"
 import { featuredProjects, getProjectBySlug, siteConfig } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 type WorkPageProps = {
   params: Promise<{
@@ -161,13 +163,15 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
+                <TrackedLink
                   href="/contact"
+                  eventName={analyticsEvents.contactClick}
+                  eventParams={{ location: "work_case_study_hero" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
                 >
                   <MessageCircle className="size-5" />
                   Start a similar project
-                </Link>
+                </TrackedLink>
                 {project.liveLink && (
                   <Link
                     href={project.liveLink}

@@ -13,6 +13,8 @@ import {
   whatsappContactUrl,
 } from "@/lib/site"
 import LazyPortfolioScene from "./LazyPortfolioScene"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 function HeroSection() {
   return (
@@ -42,13 +44,15 @@ function HeroSection() {
           </p>
 
           <div className="hero-entrance hero-entrance-delay-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link
+            <TrackedLink
               href={siteConfig.businessWebsitePath}
+              eventName={analyticsEvents.businessWebsiteCtaClick}
+              eventParams={{ location: "home_hero" }}
               className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
             >
               <MessageCircle className="size-5" />
               Start a business website
-            </Link>
+            </TrackedLink>
             <Link
               href="/my-work"
               className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white/70 px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
@@ -56,15 +60,17 @@ function HeroSection() {
               See client work
               <ArrowUpRight className="size-5" />
             </Link>
-            <Link
+            <TrackedLink
               href={whatsappContactUrl}
               target="_blank"
               rel="noopener noreferrer"
+              eventName={analyticsEvents.whatsappClick}
+              eventParams={{ location: "home_hero" }}
               className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white/70 px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
             >
               <PhoneCall className="size-5" />
               WhatsApp
-            </Link>
+            </TrackedLink>
           </div>
 
           <ul className="hero-entrance hero-entrance-delay-3 mt-8 grid gap-3 text-sm text-slate-700 dark:text-slate-300 sm:grid-cols-2">

@@ -3,6 +3,7 @@ import React, { useEffect, useState, Suspense } from 'react'
 import { HeaderItem } from '../../../../types/menu'
 import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { analyticsEvents, trackEvent } from '@/lib/analytics'
 
 const OFFSET = 80 // Adjust this value based on your fixed header height
 
@@ -55,10 +56,19 @@ const HeaderLinkContent: React.FC<{ item: HeaderItem }> = ({ item }) => {
 
   useActiveLink(setActiveLink)
 
+  const handleClick = () => {
+    if (item.href === '/contact') {
+      trackEvent(analyticsEvents.contactClick, {
+        location: 'primary_navigation',
+      })
+    }
+  }
+
   return (
     <li>
       <Link
         href={item.href}
+        onClick={handleClick}
         className={`block rounded-lg px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-slate-950 hover:shadow-header_shadow dark:hover:bg-white dark:hover:text-slate-950 
                     ${
                       activeLink === item.href

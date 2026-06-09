@@ -4,6 +4,7 @@ import Header from "./components/layout/header"
 import Footer from "./components/layout/footer/Footer"
 import ScrollToTop from "./components/scroll-to-top"
 import StickyMobileCTA from "./components/sticky-mobile-cta"
+import GoogleAnalytics from "./components/analytics/google-analytics"
 import Providers from "./providers"
 import { featuredProjects, serviceOfferings, siteConfig } from "@/lib/site"
 import { llmResourceUrls } from "@/lib/llm-seo"
@@ -326,6 +327,7 @@ export default function RootLayout({
   return (
     <html lang="en-IN" suppressHydrationWarning>
       <body className="pb-20 md:pb-0">
+        <GoogleAnalytics />
         <Providers>
           <Header />
           {children}

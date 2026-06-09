@@ -1,9 +1,10 @@
 "use client"
 
-import Link from "next/link"
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react"
 import { useState } from "react"
 import { siteConfig, whatsappContactUrl } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents, trackEvent } from "@/lib/analytics"
 
 type FormData = {
   name: string
@@ -44,6 +45,10 @@ function ContactForm() {
     event.preventDefault()
     setLoader(true)
     setError("")
+    trackEvent(analyticsEvents.contactFormSubmit, {
+      location: "contact_form",
+      project_type: formData.interest,
+    })
 
     try {
       const response = await fetch(formSubmitAjaxUrl, {
@@ -60,12 +65,24 @@ function ContactForm() {
       const data = await response.json()
 
       if (data.success) {
+        trackEvent(analyticsEvents.contactFormSuccess, {
+          location: "contact_form",
+          project_type: formData.interest,
+        })
         setSubmitted(true)
         setFormData(initialFormData)
       } else {
+        trackEvent(analyticsEvents.contactFormError, {
+          location: "contact_form",
+          reason: "formsubmit_unsuccessful",
+        })
         setError("Something went wrong. Please email me directly.")
       }
     } catch {
+      trackEvent(analyticsEvents.contactFormError, {
+        location: "contact_form",
+        reason: "request_failed",
+      })
       setError("Something went wrong. Please email me directly.")
     } finally {
       setLoader(false)
@@ -91,29 +108,35 @@ function ContactForm() {
             </p>
 
             <div className="mt-8 grid gap-3">
-              <Link
+              <TrackedLink
                 href={`mailto:${siteConfig.email}`}
+                eventName={analyticsEvents.emailClick}
+                eventParams={{ location: "contact_page" }}
                 className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
               >
                 <Mail className="size-5 text-teal-700 dark:text-teal-300" />
                 {siteConfig.email}
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                eventName={analyticsEvents.phoneClick}
+                eventParams={{ location: "contact_page" }}
                 className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
               >
                 <Phone className="size-5 text-teal-700 dark:text-teal-300" />
                 {siteConfig.phone}
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href={whatsappContactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                eventName={analyticsEvents.whatsappClick}
+                eventParams={{ location: "contact_page" }}
                 className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 transition hover:border-slate-900/25 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
               >
                 <MessageCircle className="size-5 text-teal-700 dark:text-teal-300" />
                 WhatsApp for a business website
-              </Link>
+              </TrackedLink>
               <div className="flex items-center gap-3 rounded-lg border border-slate-900/10 bg-white p-4 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
                 <MapPin className="size-5 text-teal-700 dark:text-teal-300" />
                 {siteConfig.location}

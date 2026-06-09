@@ -17,6 +17,8 @@ import {
   siteConfig,
   whatsappContactUrl,
 } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 const pagePath = siteConfig.businessWebsitePath
 const pageUrl = `${siteConfig.url}${pagePath}`
@@ -234,22 +236,26 @@ export default function BusinessWebsiteDeveloperAhmedabadPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link
+                <TrackedLink
                   href="/contact"
+                  eventName={analyticsEvents.contactClick}
+                  eventParams={{ location: "business_service_hero" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
                 >
                   <MessageCircle className="size-5" />
                   Start a business website
-                </Link>
-                <Link
+                </TrackedLink>
+                <TrackedLink
                   href={whatsappContactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  eventName={analyticsEvents.whatsappClick}
+                  eventParams={{ location: "business_service_hero" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
                 >
                   <PhoneCall className="size-5" />
                   WhatsApp Pratham
-                </Link>
+                </TrackedLink>
               </div>
 
               <ul className="mt-8 grid gap-3 text-sm text-slate-700 dark:text-slate-300 sm:grid-cols-2">
@@ -427,22 +433,26 @@ export default function BusinessWebsiteDeveloperAhmedabadPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
+                <TrackedLink
                   href="/contact"
+                  eventName={analyticsEvents.contactClick}
+                  eventParams={{ location: "business_service_final_cta" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200"
                 >
                   <MessageCircle className="size-5" />
                   Start a business website
-                </Link>
-                <Link
+                </TrackedLink>
+                <TrackedLink
                   href={whatsappContactUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  eventName={analyticsEvents.whatsappClick}
+                  eventParams={{ location: "business_service_final_cta" }}
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-white/20 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/45"
                 >
                   <PhoneCall className="size-5" />
                   WhatsApp now
-                </Link>
+                </TrackedLink>
               </div>
             </div>
           </div>

@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { footerData, siteConfig } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 const Footer = () => {
   return (
@@ -96,18 +98,22 @@ const Footer = () => {
               <p className="mt-4 text-slate-600 dark:text-slate-400">
                 {footerData.contactDetails.address}
               </p>
-              <Link
+              <TrackedLink
                 className="mt-3 block text-slate-600 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white"
                 href={`mailto:${footerData.contactDetails.email}`}
+                eventName={analyticsEvents.emailClick}
+                eventParams={{ location: "footer" }}
               >
                 {footerData.contactDetails.email}
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 className="mt-3 block text-slate-600 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white"
                 href={`tel:${footerData.contactDetails.phone.replace(/\s/g, "")}`}
+                eventName={analyticsEvents.phoneClick}
+                eventParams={{ location: "footer" }}
               >
                 {footerData.contactDetails.phone}
-              </Link>
+              </TrackedLink>
             </address>
           </div>
         </div>

@@ -8,6 +8,8 @@ import {
   serviceOfferings,
   siteConfig,
 } from "@/lib/site"
+import TrackedLink from "@/app/components/tracked-link"
+import { analyticsEvents } from "@/lib/analytics"
 
 type BlogArticlePageProps = {
   params: Promise<{
@@ -195,13 +197,15 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
                   e-commerce catalogues, and technical SEO foundations for
                   Indian and remote clients.
                 </p>
-                <Link
+                <TrackedLink
                   href="/contact"
+                  eventName={analyticsEvents.contactClick}
+                  eventParams={{ location: "blog_article_cta" }}
                   className="mt-6 inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800"
                 >
                   <MessageCircle className="size-5" />
                   Discuss your project
-                </Link>
+                </TrackedLink>
               </section>
             </div>
 
