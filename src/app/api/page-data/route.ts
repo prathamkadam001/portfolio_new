@@ -114,7 +114,7 @@ const onlinePresenceList: onlinePresence[] = [
     image: '/images/projects/bbhsl.png',
     title: 'Balanced Behavioral Health',
     tag: [],
-    link: 'https://bbhsl.globalitinfosolution.com/',
+    link: '/work/balanced-behavioral-health',
   },
 ]
 

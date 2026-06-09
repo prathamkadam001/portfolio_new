@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next"
-import { llmResourceUrls, markdownDocuments } from "@/lib/llm-seo"
+import { llmResourceUrls } from "@/lib/llm-seo"
 import {
   featuredProjects,
   seoArticles,
@@ -69,19 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const markdownRoutes = markdownDocuments.map((document) => ({
-    url: `${siteConfig.url}${document.path}`,
-    lastModified,
-    changeFrequency: "monthly" as const,
-    priority: document.priority,
-  }))
-
   return [
     ...routes,
     ...serviceRoutes,
     ...workRoutes,
     ...blogRoutes,
     ...aiResourceRoutes,
-    ...markdownRoutes,
   ]
 }

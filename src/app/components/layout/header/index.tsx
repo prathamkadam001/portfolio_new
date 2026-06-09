@@ -20,6 +20,21 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!sidebarOpen) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSidebarOpen(false)
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
+  }, [sidebarOpen])
+
   return (
     <header className="fixed top-0 z-50 w-full">
       <div className="container py-3">
@@ -66,6 +81,8 @@ const Header = () => {
               className="grid size-10 place-items-center rounded-lg border border-slate-900/10 text-slate-950 dark:border-white/10 dark:text-white lg:hidden"
               onClick={() => setSidebarOpen(true)}
               aria-label="Open mobile menu"
+              aria-controls="mobile-menu"
+              aria-expanded={sidebarOpen}
             >
               <Menu className="size-5" />
             </button>
@@ -83,10 +100,12 @@ const Header = () => {
       )}
 
       <aside
+        id="mobile-menu"
         className={`fixed right-0 top-0 z-50 h-full w-full max-w-sm border-l border-slate-900/10 bg-white p-5 shadow-2xl transition-transform duration-300 dark:border-white/10 dark:bg-[#07111f] lg:hidden ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full"
+          sidebarOpen ? "translate-x-0" : "pointer-events-none translate-x-full"
         }`}
         aria-hidden={!sidebarOpen}
+        inert={!sidebarOpen}
       >
         <div className="flex items-center justify-between">
           <Link

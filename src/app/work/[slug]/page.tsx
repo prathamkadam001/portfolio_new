@@ -104,7 +104,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
       description: project.description,
       image: `${siteConfig.url}${project.image}`,
       url: projectUrl,
-      sameAs: project.liveLink,
+      ...(project.liveLink ? { sameAs: project.liveLink } : {}),
       inLanguage: siteConfig.language,
       keywords: project.tags,
       about: project.services,
@@ -168,15 +168,17 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                   <MessageCircle className="size-5" />
                   Start a similar project
                 </Link>
-                <Link
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
-                >
-                  Visit live website
-                  <ArrowUpRight className="size-5" />
-                </Link>
+                {project.liveLink && (
+                  <Link
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
+                  >
+                    Visit live website
+                    <ArrowUpRight className="size-5" />
+                  </Link>
+                )}
               </div>
             </div>
 

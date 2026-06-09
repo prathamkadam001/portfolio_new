@@ -377,7 +377,7 @@ export const featuredProjects = [
       "Healthcare-oriented website focused on accessibility, credibility, and a clean user experience for visitors.",
     tags: ["MERN", "MySQL", "Tailwind"],
     link: "/work/balanced-behavioral-health",
-    liveLink: "https://bbhsl.globalitinfosolution.com/",
+    liveLink: null,
     clientType: "Healthcare service provider",
     challenge:
       "Healthcare visitors need clear, calm, and credible information before taking action, especially on service pages.",
@@ -417,7 +417,7 @@ export const featuredProjects = [
       "Responsive company website built to improve online visibility and showcase the brand more professionally.",
     tags: ["Next.js", "Responsive", "Tailwind"],
     link: "/work/viyan-electronics",
-    liveLink: "https://www.viyanelectronics.com/Users",
+    liveLink: "https://www.viyanelectronics.com/",
     clientType: "Electronics business",
     challenge:
       "The business needed a modern web presence to present its brand and products more clearly to online visitors.",

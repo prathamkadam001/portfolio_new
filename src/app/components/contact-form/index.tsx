@@ -21,6 +21,9 @@ const initialFormData: FormData = {
   message: "",
 }
 
+const formSubmitUrl = `https://formsubmit.co/${siteConfig.email}`
+const formSubmitAjaxUrl = `https://formsubmit.co/ajax/${siteConfig.email}`
+
 function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [submitted, setSubmitted] = useState(false)
@@ -43,18 +46,16 @@ function ContactForm() {
     setError("")
 
     try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/prathamkadam0001@gmail.com",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams({
-            ...formData,
-            _subject: "New portfolio project enquiry",
-            _template: "table",
-          }),
-        },
-      )
+      const response = await fetch(formSubmitAjaxUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          ...formData,
+          _subject: "New portfolio project enquiry",
+          _template: "table",
+          _captcha: "false",
+        }),
+      })
 
       const data = await response.json()
 
@@ -140,7 +141,24 @@ function ContactForm() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="grid gap-6">
+              <form
+                action={formSubmitUrl}
+                method="POST"
+                onSubmit={handleSubmit}
+                className="grid gap-6"
+              >
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New portfolio project enquiry"
+                />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={`${siteConfig.url}/contact`}
+                />
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label

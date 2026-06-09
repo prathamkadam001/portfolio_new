@@ -29,7 +29,7 @@ const pageDescription =
   "Hire Pratham Kadam, a business website developer in Ahmedabad, for SEO-ready websites, service pages, portfolio proof, contact forms, WhatsApp CTAs, and fast Next.js builds for small businesses."
 
 export const metadata: Metadata = {
-  title: `${pageTitle} | Pratham Kadam`,
+  title: pageTitle,
   description: pageDescription,
   keywords: [
     "business website developer in Ahmedabad",

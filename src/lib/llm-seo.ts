@@ -429,7 +429,9 @@ const projectDocuments: LlmMarkdownDocument[] = featuredProjects.map((project) =
     bulletList([
       `Category: ${project.category}`,
       `Client type: ${project.clientType}`,
-      `Live site: ${project.liveLink}`,
+      project.liveLink
+        ? `Live site: ${project.liveLink}`
+        : "Live site: Not publicly available",
       `Portfolio page: ${absoluteUrl(project.link)}`,
     ]),
     "## Challenge",
@@ -697,7 +699,7 @@ export function buildAiSummary() {
       technologies: project.tags,
       url: absoluteUrl(project.link),
       markdown_url: documentUrl(`/markdown/work/${project.slug}.md`),
-      live_url: project.liveLink,
+      live_url: project.liveLink ?? null,
       image: absoluteUrl(project.image),
     })),
     articles: seoArticles.map((article) => ({

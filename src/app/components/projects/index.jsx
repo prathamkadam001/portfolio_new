@@ -33,23 +33,23 @@ export default function ProjectsSection() {
   }, [activeCategory, search]);
 
   return (
-    <section className="bg-[#f7fbff] pt-36 pb-20 dark:bg-[#06101f]">
+    <section className="bg-[#f7fbff] pt-28 pb-20 dark:bg-[#06101f] md:pt-36">
       <div className="container">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 dark:text-teal-300">
             Portfolio
           </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950 dark:text-white md:text-6xl">
-            Project work across education, e-commerce, healthcare, management
-            systems, and business websites.
+          <h1 className="mt-4 text-3xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-4xl md:text-6xl">
+            Project work across business websites, e-commerce, healthcare,
+            education, and systems.
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-300">
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-700 dark:text-slate-300 md:mt-5 md:text-lg md:leading-8">
             A focused look at websites and applications built to improve trust,
             present information clearly, and support real business enquiries.
           </p>
         </div>
 
-        <div className="sticky top-24 z-20 mt-12 rounded-lg border border-slate-900/10 bg-white/90 p-4 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-[#0a1728]/90">
+        <div className="sticky top-24 z-20 mt-8 rounded-lg border border-slate-900/10 bg-white/90 p-4 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-white/10 dark:bg-[#0a1728]/90 md:mt-12">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-400" />
@@ -176,15 +176,17 @@ export default function ProjectsSection() {
                     Read case study
                     <ArrowUpRight className="size-4" />
                   </Link>
-                  <Link
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-slate-900/15 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900/35 dark:border-white/15 dark:text-slate-300"
-                  >
-                    Live site
-                    <ArrowUpRight className="size-4" />
-                  </Link>
+                  {project.liveLink && (
+                    <Link
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-900/15 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900/35 dark:border-white/15 dark:text-slate-300"
+                    >
+                      Live site
+                      <ArrowUpRight className="size-4" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </article>

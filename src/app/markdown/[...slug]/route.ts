@@ -35,6 +35,7 @@ export async function GET(_request: Request, { params }: MarkdownRouteContext) {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "X-Robots-Tag": "noindex, follow",
       Link: `<${document.canonicalUrl}>; rel="canonical"`,
     },
   })
