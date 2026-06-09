@@ -73,7 +73,7 @@ const Footer = () => {
               </ul>
             </nav>
 
-            <nav aria-label="Legal pages">
+            <nav aria-label="Growth pages">
               <p className="font-semibold text-slate-950 dark:text-white">
                 {footerData.otherPages.name}
               </p>

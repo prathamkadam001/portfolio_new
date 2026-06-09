@@ -3,6 +3,7 @@ import { llmResourceUrls } from "@/lib/llm-seo"
 import {
   featuredProjects,
   seoArticles,
+  seoLandingPages,
   serviceOfferings,
   siteConfig,
 } from "@/lib/site"
@@ -56,6 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const seoLandingRoutes = seoLandingPages.map((page) => ({
+    url: `${siteConfig.url}/${page.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: page.slug === "website-developer-ahmedabad" ? 0.92 : 0.86,
+  }))
+
   const aiResourceRoutes = [
     llmResourceUrls.llmsTxt,
     llmResourceUrls.llmsFullTxt,
@@ -74,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes,
     ...workRoutes,
     ...blogRoutes,
+    ...seoLandingRoutes,
     ...aiResourceRoutes,
   ]
 }

@@ -568,7 +568,435 @@ export const seoArticles = [
       },
     ],
   },
+  {
+    slug: "website-developer-ahmedabad-cost",
+    title: "Website Developer in Ahmedabad Cost: What Affects Pricing?",
+    description:
+      "Understand what affects website developer pricing in Ahmedabad, including page count, design, SEO setup, forms, content, dashboards, and maintenance.",
+    keyword: "website developer Ahmedabad cost",
+    date: "2026-06-09",
+    readingTime: "6 min read",
+    sections: [
+      {
+        heading: "Website cost depends on scope",
+        body:
+          "A small business website with a homepage, service sections, contact form, and basic SEO will cost less than a custom web app, e-commerce catalogue, or dashboard. The more pages, logic, integrations, and content planning required, the more development time is needed.",
+      },
+      {
+        heading: "SEO-ready work has extra value",
+        body:
+          "A cheap website that has no metadata, weak headings, no sitemap, no schema, and poor mobile structure may need rework later. A proper build should include SEO foundations from the start so Google can understand the pages and visitors can trust the business.",
+      },
+      {
+        heading: "Design and copy affect conversion",
+        body:
+          "The website should not only look modern. It should explain services clearly, show proof, answer common questions, and place contact actions where users need them. This planning work affects cost but also affects enquiries.",
+      },
+      {
+        heading: "Maintenance should be planned",
+        body:
+          "After launch, most businesses need content updates, bug fixes, new pages, analytics checks, Search Console review, and small improvements. A realistic website budget should consider post-launch support too.",
+      },
+    ],
+  },
+  {
+    slug: "small-business-website-checklist-india",
+    title: "Small Business Website Checklist for India-Based Businesses",
+    description:
+      "A practical checklist for small business websites in India covering homepage structure, services, proof, SEO, WhatsApp, contact forms, and Google indexing.",
+    keyword: "small business website checklist India",
+    date: "2026-06-09",
+    readingTime: "7 min read",
+    sections: [
+      {
+        heading: "Start with a clear offer",
+        body:
+          "A small business website should quickly answer what you do, who you help, where you work, and how customers can contact you. If visitors need too much effort to understand the business, the page will lose enquiries.",
+      },
+      {
+        heading: "Add service and proof sections",
+        body:
+          "Your homepage should link to important services, show project examples or client proof, and include short explanations that build trust. For local businesses, even simple proof can make a visitor more confident.",
+      },
+      {
+        heading: "Make contact easy",
+        body:
+          "Add WhatsApp, phone, email, and a contact form. Track those clicks with analytics so you know which contact path people actually use. Clear calls to action can improve enquiry rates without more traffic.",
+      },
+      {
+        heading: "Do the SEO basics",
+        body:
+          "Every important page should have a unique title, description, H1, internal links, image alt text, schema where useful, and sitemap inclusion. These basics help Google discover and understand the website.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-choose-web-developer-ahmedabad",
+    title: "How to Choose a Web Developer in Ahmedabad",
+    description:
+      "Learn how Ahmedabad businesses can choose a web developer by checking portfolio work, SEO knowledge, technical stack, communication, maintenance, and business understanding.",
+    keyword: "how to choose web developer Ahmedabad",
+    date: "2026-06-09",
+    readingTime: "5 min read",
+    sections: [
+      {
+        heading: "Check real project work",
+        body:
+          "A developer portfolio should show more than screenshots. Look for projects similar to your business goal: service websites, product catalogues, dashboards, institutes, manufacturing, healthcare, or e-commerce.",
+      },
+      {
+        heading: "Ask about SEO foundations",
+        body:
+          "A good business website should include metadata, heading structure, sitemap, robots.txt, schema, internal links, and mobile performance. If SEO is ignored during development, ranking later becomes harder.",
+      },
+      {
+        heading: "Look for business thinking",
+        body:
+          "The developer should ask about your audience, services, proof, contact flow, and launch goal. A technically correct website can still fail if it does not explain the business clearly.",
+      },
+      {
+        heading: "Clarify maintenance and ownership",
+        body:
+          "Before starting, ask who owns the domain, hosting, code, content, and analytics. Also clarify how future changes, bug fixes, and new pages will be handled after launch.",
+      },
+    ],
+  },
+  {
+    slug: "website-redesign-seo-checklist",
+    title: "Website Redesign SEO Checklist Before You Rebuild",
+    description:
+      "Use this website redesign SEO checklist to protect rankings, improve structure, update metadata, preserve URLs, add redirects, and improve enquiry flow.",
+    keyword: "website redesign SEO checklist",
+    date: "2026-06-09",
+    readingTime: "6 min read",
+    sections: [
+      {
+        heading: "Audit the current website first",
+        body:
+          "Before redesigning, check which pages exist, which pages get traffic, what keywords show impressions, and which URLs are already indexed. This helps avoid losing useful search signals during the rebuild.",
+      },
+      {
+        heading: "Preserve or redirect important URLs",
+        body:
+          "If an old page has traffic or backlinks, keep the same URL when possible. If the URL changes, add a proper redirect so visitors and search engines reach the new page instead of a 404.",
+      },
+      {
+        heading: "Improve metadata and content",
+        body:
+          "A redesign is a good time to rewrite page titles, descriptions, headings, service sections, proof blocks, FAQs, and calls to action. Better structure helps both search engines and visitors.",
+      },
+      {
+        heading: "Submit and monitor after launch",
+        body:
+          "After launch, submit the sitemap in Search Console, request indexing for important pages, and monitor coverage, clicks, impressions, and contact events in analytics.",
+      },
+    ],
+  },
+  {
+    slug: "local-seo-website-ahmedabad-business",
+    title: "Local SEO Website Guide for Ahmedabad Businesses",
+    description:
+      "A local SEO website guide for Ahmedabad businesses covering location pages, service pages, Google Business Profile, reviews, schema, content, and backlinks.",
+    keyword: "local SEO website Ahmedabad business",
+    date: "2026-06-09",
+    readingTime: "7 min read",
+    sections: [
+      {
+        heading: "Local SEO needs clear location signals",
+        body:
+          "Your website should mention your city, service area, contact details, and business type naturally. For Ahmedabad businesses, location-focused pages can help Google understand where the service is relevant.",
+      },
+      {
+        heading: "Service pages matter",
+        body:
+          "Instead of relying only on one homepage, create pages for important services. Each page should explain the offer, who it is for, what is included, FAQs, proof, and a clear contact path.",
+      },
+      {
+        heading: "Google Business Profile supports the website",
+        body:
+          "A Google Business Profile with the same name, phone, website, category, services, photos, and reviews can strengthen local trust. The website and profile should support each other.",
+      },
+      {
+        heading: "Backlinks and mentions build authority",
+        body:
+          "Add your website link to LinkedIn, GitHub, Instagram, directories, guest posts, and helpful answers. Local citations and relevant mentions can support discovery and trust over time.",
+      },
+    ],
+  },
 ]
+
+export type SeoLandingPage = {
+  slug: string
+  title: string
+  description: string
+  keyword: string
+  eyebrow: string
+  heroTitle: string
+  intro: string
+  primaryCta: string
+  secondaryCta: string
+  highlights: string[]
+  sections: Array<{
+    heading: string
+    body: string
+  }>
+  faqs: Array<{
+    question: string
+    answer: string
+  }>
+}
+
+export const seoLandingPages: SeoLandingPage[] = [
+  {
+    slug: "website-developer-ahmedabad",
+    title: "Website Developer in Ahmedabad | Pratham Kadam",
+    description:
+      "Hire Pratham Kadam, website developer in Ahmedabad, for SEO-ready business websites, service pages, portfolios, contact forms, and fast Next.js builds.",
+    keyword: "website developer in Ahmedabad",
+    eyebrow: "Website Developer In Ahmedabad",
+    heroTitle:
+      "Website developer in Ahmedabad for professional, SEO-ready business websites.",
+    intro:
+      "I help Ahmedabad businesses build websites that explain services clearly, load fast on mobile, show trust, and make it easy for visitors to enquire through forms, email, phone, and WhatsApp.",
+    primaryCta: "Start your website",
+    secondaryCta: "WhatsApp Pratham",
+    highlights: [
+      "Business websites for Ahmedabad companies",
+      "Mobile-friendly UI with clear contact paths",
+      "SEO metadata, schema, sitemap, and index-ready structure",
+      "Built with Next.js, React, and conversion-focused sections",
+    ],
+    sections: [
+      {
+        heading: "Built for local business trust",
+        body:
+          "A good business website should quickly tell visitors who you are, what you offer, where you work, and why they should contact you. I structure pages around services, proof, FAQs, and enquiry actions so the site feels useful instead of only decorative.",
+      },
+      {
+        heading: "Search-friendly from the start",
+        body:
+          "The build includes clean page titles, descriptions, headings, internal links, image alt text, schema, robots.txt, and sitemap setup. These basics help Google understand your website and help visitors understand your offer.",
+      },
+      {
+        heading: "Practical launch support",
+        body:
+          "After development, I help prepare the site for deployment, testing, Search Console submission, and future page additions. That gives your website a stronger base for long-term SEO growth.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you build websites for Ahmedabad businesses?",
+        answer:
+          "Yes. I build websites for Ahmedabad businesses, institutes, manufacturers, consultants, agencies, and product companies that need a stronger online presence.",
+      },
+      {
+        question: "Will the website be SEO-ready?",
+        answer:
+          "Yes. I set up metadata, headings, schema, sitemap, robots.txt, internal links, and mobile-friendly page structure.",
+      },
+    ],
+  },
+  {
+    slug: "freelance-web-developer-ahmedabad",
+    title: "Freelance Web Developer in Ahmedabad | Pratham Kadam",
+    description:
+      "Work with Pratham Kadam, freelance web developer in Ahmedabad, for business websites, web apps, redesigns, SEO foundations, and ongoing website improvements.",
+    keyword: "freelance web developer Ahmedabad",
+    eyebrow: "Freelance Web Developer Ahmedabad",
+    heroTitle:
+      "Freelance web developer in Ahmedabad for websites, web apps, and SEO improvements.",
+    intro:
+      "I work directly with business owners and teams that need a reliable freelance developer for clear planning, clean implementation, responsive pages, and practical post-launch support.",
+    primaryCta: "Discuss a freelance project",
+    secondaryCta: "Message on WhatsApp",
+    highlights: [
+      "Direct freelance communication",
+      "Business websites, dashboards, and web apps",
+      "Frontend, backend, API, and deployment support",
+      "SEO and conversion basics included in planning",
+    ],
+    sections: [
+      {
+        heading: "Good fit for small teams",
+        body:
+          "A freelance developer is useful when you need focused execution without agency overhead. I can help with new websites, redesigns, landing pages, dashboards, e-commerce catalogues, and maintenance tasks.",
+      },
+      {
+        heading: "Full stack delivery",
+        body:
+          "Many projects need more than a frontend. I can work across React, Next.js, Node.js, forms, APIs, databases, dashboards, and deployment so the user interface connects with real business workflows.",
+      },
+      {
+        heading: "Clear scope and phases",
+        body:
+          "I prefer practical milestones: understand the goal, plan the content and pages, build the core experience, test it, and then improve based on feedback and search data.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I hire you for small website changes?",
+        answer:
+          "Yes. I can help with content updates, UI fixes, landing pages, SEO improvements, and small feature additions when the scope is clear.",
+      },
+      {
+        question: "Do you work remotely?",
+        answer:
+          "Yes. I work with Ahmedabad, India, and remote clients using calls, shared planning, and deployment-ready delivery.",
+      },
+    ],
+  },
+  {
+    slug: "nextjs-developer-india",
+    title: "Next.js Developer in India | Pratham Kadam",
+    description:
+      "Hire Pratham Kadam, Next.js developer in India, for SEO-friendly websites, React frontends, business landing pages, dashboards, and fast production builds.",
+    keyword: "Next.js developer India",
+    eyebrow: "Next.js Developer India",
+    heroTitle:
+      "Next.js developer in India for fast, SEO-friendly websites and business web apps.",
+    intro:
+      "I build production-ready Next.js websites and interfaces for businesses that need speed, search-friendly structure, responsive layouts, and maintainable code.",
+    primaryCta: "Start a Next.js project",
+    secondaryCta: "WhatsApp project details",
+    highlights: [
+      "Next.js app routing and metadata setup",
+      "SEO-focused landing pages and service pages",
+      "Responsive React UI with performance-aware images",
+      "API, form, dashboard, and deployment support",
+    ],
+    sections: [
+      {
+        heading: "Why Next.js works well for SEO",
+        body:
+          "Next.js supports server-rendered pages, structured metadata, fast routing, image optimization, and clean page generation. These strengths help business websites become easier for search engines to crawl and easier for users to use.",
+      },
+      {
+        heading: "Built for real business pages",
+        body:
+          "The goal is not only to use a modern framework. The pages need clear headings, relevant copy, proof, FAQs, calls to action, schema, and internal links so visitors and search engines understand the offer.",
+      },
+      {
+        heading: "Performance and maintainability",
+        body:
+          "I keep layouts responsive, components reusable, and pages organized so the site can grow with new services, blogs, case studies, and location pages without becoming hard to maintain.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you convert an old website to Next.js?",
+        answer:
+          "Yes. I can rebuild an outdated site with better performance, clearer structure, responsive UI, and technical SEO basics.",
+      },
+      {
+        question: "Can you build SEO landing pages in Next.js?",
+        answer:
+          "Yes. Next.js is a strong fit for keyword-focused service pages, location pages, blogs, and case-study pages.",
+      },
+    ],
+  },
+  {
+    slug: "website-developer-for-small-business",
+    title: "Website Developer for Small Business in India | Pratham Kadam",
+    description:
+      "Small business website developer for SEO-ready websites, mobile layouts, service pages, WhatsApp CTAs, contact forms, and affordable launch-ready builds.",
+    keyword: "website developer for small business India",
+    eyebrow: "Small Business Website Developer",
+    heroTitle:
+      "Website developer for small businesses that need trust, clarity, and enquiries.",
+    intro:
+      "I help small businesses turn a simple online presence into a better sales asset with clear service copy, proof sections, mobile-first layouts, and easy contact actions.",
+    primaryCta: "Build my small business website",
+    secondaryCta: "Ask on WhatsApp",
+    highlights: [
+      "Ideal for local businesses and service providers",
+      "Homepage, service sections, FAQs, and contact flow",
+      "WhatsApp, email, phone, and form lead paths",
+      "SEO-ready setup for Google indexing",
+    ],
+    sections: [
+      {
+        heading: "Small business websites need clarity",
+        body:
+          "Most visitors decide quickly whether they trust a business. Your website should explain your services, show real work or proof, answer common doubts, and make the next step obvious.",
+      },
+      {
+        heading: "Lead generation matters",
+        body:
+          "For small businesses, a website should support enquiries. I add clear calls to action, contact forms, WhatsApp links, phone/email links, and page sections that guide visitors toward contacting you.",
+      },
+      {
+        heading: "Ready for future growth",
+        body:
+          "The first website can start simple, but it should be built in a way that supports new service pages, blogs, case studies, Search Console improvements, and ongoing content updates.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What should a small business website include?",
+        answer:
+          "It should include a clear homepage, services, proof, FAQs, contact actions, SEO metadata, mobile-friendly design, and a simple way for customers to enquire.",
+      },
+      {
+        question: "Can you add WhatsApp to the website?",
+        answer:
+          "Yes. I can add WhatsApp CTAs, phone/email links, and contact forms so visitors can contact you quickly.",
+      },
+    ],
+  },
+  {
+    slug: "website-redesign-ahmedabad",
+    title: "Website Redesign in Ahmedabad | Pratham Kadam",
+    description:
+      "Website redesign in Ahmedabad for outdated business websites that need better speed, clearer copy, modern UI, technical SEO, and stronger enquiry flow.",
+    keyword: "website redesign Ahmedabad",
+    eyebrow: "Website Redesign Ahmedabad",
+    heroTitle:
+      "Website redesign in Ahmedabad for faster, clearer, more trustworthy business websites.",
+    intro:
+      "If your current website looks old, loads slowly, has weak SEO, or does not bring enquiries, I can redesign it with better structure, stronger content, and modern Next.js implementation.",
+    primaryCta: "Redesign my website",
+    secondaryCta: "Send current website",
+    highlights: [
+      "Better mobile layout and page structure",
+      "Improved service copy and trust sections",
+      "Technical SEO cleanup and metadata",
+      "Contact flow, WhatsApp CTAs, and tracking-ready actions",
+    ],
+    sections: [
+      {
+        heading: "Redesign is not only visual",
+        body:
+          "A redesign should improve how visitors understand your business. That means clearer headings, better page order, stronger proof, better images, and contact actions placed where users naturally need them.",
+      },
+      {
+        heading: "SEO cleanup included",
+        body:
+          "Many old websites miss basic SEO signals. I can clean up titles, descriptions, canonical tags, headings, sitemap, robots.txt, image alt text, schema, and internal links.",
+      },
+      {
+        heading: "Better conversion path",
+        body:
+          "The new site should make enquiries easier through forms, WhatsApp, phone, and email. I also add event tracking support so you can see which actions visitors actually use.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you redesign my existing website without losing SEO?",
+        answer:
+          "Yes. The redesign should preserve important URLs where possible, improve metadata, add redirects if needed, and keep the site crawlable for Google.",
+      },
+      {
+        question: "Can you make an old website faster?",
+        answer:
+          "Yes. A rebuild with better code structure, optimized images, and cleaner pages can improve loading speed and user experience.",
+      },
+    ],
+  },
+]
+
+export function getSeoLandingPageBySlug(slug: string) {
+  return seoLandingPages.find((page) => page.slug === slug)
+}
 
 export const heroHighlights = [
   "Business websites for Ahmedabad and India",
@@ -619,13 +1047,24 @@ export const footerData = {
       { name: "Work", url: "/my-work" },
       { name: "Blog", url: "/blog" },
       { name: "Contact", url: "/contact" },
+      { name: "Privacy Policy", url: "/privacy-policy" },
+      { name: "Terms", url: "/terms-and-conditions" },
     ],
   },
   otherPages: {
-    name: "Other Pages",
+    name: "Growth Pages",
     links: [
-      { name: "Privacy Policy", url: "/privacy-policy" },
-      { name: "Terms and Conditions", url: "/terms-and-conditions" },
+      { name: "Website Developer Ahmedabad", url: "/website-developer-ahmedabad" },
+      {
+        name: "Freelance Web Developer",
+        url: "/freelance-web-developer-ahmedabad",
+      },
+      { name: "Next.js Developer India", url: "/nextjs-developer-india" },
+      {
+        name: "Small Business Website",
+        url: "/website-developer-for-small-business",
+      },
+      { name: "Website Redesign", url: "/website-redesign-ahmedabad" },
     ],
   },
   contactDetails: {
