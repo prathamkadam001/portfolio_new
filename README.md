@@ -1,35 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`awake-agency`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pratham Kadam Portfolio
 
-## Getting Started
+Next.js portfolio and lead-generation website for Pratham Kadam, freelance full stack and business website developer in Ahmedabad, India.
 
-First, run the development server:
+## Local Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For a production check:
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Environment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to your local/deploy environment and set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=google-site-verification-code
+```
 
-## Deploy on Vercel
+GA4 is optional at build time, but lead click tracking only sends events when a measurement ID is configured.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## SEO Assets
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Sitemap: `https://prathamkadam.netlify.app/sitemap.xml`
+- Robots: `https://prathamkadam.netlify.app/robots.txt`
+- LLM summary: `https://prathamkadam.netlify.app/llms.txt`
+- Full LLM context: `https://prathamkadam.netlify.app/llms-full.txt`
+- AI summary JSON: `https://prathamkadam.netlify.app/ai-summary.json`
+
+## Growth Workflow
+
+Use the non-GBP growth files in `docs/growth/`:
+
+- `lead-tracking.md`
+- `search-console-routine.md`
+- `backlink-citation-kit.md`
+- `weekly-content-calendar.md`
+
+These keep Search Console, GA4, profile links, social posts, and backlink work consistent without relying on Google Business Profile.

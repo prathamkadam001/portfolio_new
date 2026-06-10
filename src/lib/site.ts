@@ -13,6 +13,7 @@ export const siteConfig = {
   email: "prathamkadam.dev@gmail.com",
   phone: "+91 8128293873",
   location: "Ahmedabad, Gujarat, India",
+  serviceAreas: ["Ahmedabad", "Gandhinagar", "Vadodara", "Surat", "Rajkot"],
   availability: "Available for freelance projects",
   primaryOffer: "Business Website Development",
   businessWebsitePath: "/business-website-developer-ahmedabad",

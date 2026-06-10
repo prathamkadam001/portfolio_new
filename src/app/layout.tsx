@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next"
+import { Instrument_Serif, Inter_Tight } from "next/font/google"
 import "./globals.css"
 import Header from "./components/layout/header"
 import Footer from "./components/layout/footer/Footer"
@@ -15,6 +16,18 @@ const title = {
 }
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const profileImageUrl = `${siteConfig.url}${siteConfig.ogImage}`
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter-tight",
+})
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: "400",
+  variable: "--font-instrument-serif",
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -180,7 +193,14 @@ const jsonLd = [
     email: siteConfig.email,
     telephone: siteConfig.phone,
     priceRange: "$$",
-    areaServed: ["Ahmedabad", "Gujarat", "India", "Remote"],
+    areaServed: siteConfig.serviceAreas.map((area) => ({
+      "@type": "City",
+      name: area,
+      containedInPlace: {
+        "@type": "State",
+        name: "Gujarat",
+      },
+    })),
     founder: {
       "@type": "Person",
       name: siteConfig.name,
@@ -325,7 +345,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-IN" suppressHydrationWarning>
+    <html
+      lang="en-IN"
+      className={`${interTight.variable} ${instrumentSerif.variable}`}
+      suppressHydrationWarning
+    >
       <body className="pb-20 md:pb-0">
         <GoogleAnalytics />
         <Providers>

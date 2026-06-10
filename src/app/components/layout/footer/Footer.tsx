@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { footerData, siteConfig } from "@/lib/site"
+import { footerData, siteConfig, whatsappContactUrl } from "@/lib/site"
 import TrackedLink from "@/app/components/tracked-link"
 import { analyticsEvents } from "@/lib/analytics"
 
@@ -27,12 +27,17 @@ const Footer = () => {
 
             <div className="mt-6 flex gap-3">
               {footerData.brand.socialLinks.map((item) => (
-                <Link
+                <TrackedLink
                   key={item.label}
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
+                  eventName={analyticsEvents.socialProfileClick}
+                  eventParams={{
+                    location: "footer",
+                    profile: item.label.toLowerCase(),
+                  }}
                   className="grid size-11 place-items-center rounded-lg border border-slate-900/10 bg-white transition hover:-translate-y-0.5 hover:border-slate-900/30 dark:border-white/10 dark:bg-white/5 dark:hover:border-white/30"
                 >
                   <Image
@@ -49,7 +54,7 @@ const Footer = () => {
                     height={20}
                     width={20}
                   />
-                </Link>
+                </TrackedLink>
               ))}
             </div>
           </div>
@@ -113,6 +118,16 @@ const Footer = () => {
                 eventParams={{ location: "footer" }}
               >
                 {footerData.contactDetails.phone}
+              </TrackedLink>
+              <TrackedLink
+                className="mt-3 block font-semibold text-teal-700 transition hover:text-slate-950 dark:text-teal-300 dark:hover:text-white"
+                href={whatsappContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                eventName={analyticsEvents.whatsappClick}
+                eventParams={{ location: "footer" }}
+              >
+                WhatsApp project details
               </TrackedLink>
             </address>
           </div>

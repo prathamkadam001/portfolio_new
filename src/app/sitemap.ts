@@ -9,7 +9,7 @@ import {
 } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-06-07")
+  const lastModified = new Date("2026-06-10")
   const profileImage = `${siteConfig.url}${siteConfig.ogImage}`
   const routes = [
     "/",

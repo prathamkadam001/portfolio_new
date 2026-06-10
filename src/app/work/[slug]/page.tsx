@@ -173,15 +173,20 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                   Start a similar project
                 </TrackedLink>
                 {project.liveLink && (
-                  <Link
+                  <TrackedLink
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    eventName={analyticsEvents.projectLiveClick}
+                    eventParams={{
+                      location: "work_case_study_hero",
+                      project: project.slug,
+                    }}
                     className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg border border-slate-900/15 bg-white px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-900/35 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-white/35"
                   >
                     Visit live website
                     <ArrowUpRight className="size-5" />
-                  </Link>
+                  </TrackedLink>
                 )}
               </div>
             </div>

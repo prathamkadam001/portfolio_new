@@ -7,7 +7,9 @@ export const analyticsEvents = {
   contactFormSubmit: "contact_form_submit",
   contactFormSuccess: "contact_form_success",
   emailClick: "email_click",
+  projectLiveClick: "project_live_click",
   phoneClick: "phone_click",
+  socialProfileClick: "social_profile_click",
   whatsappClick: "whatsapp_click",
 } as const
 
