@@ -2,51 +2,53 @@
 
 Manual URL Inspection requests already completed. Do not submit these URLs again unless the page changes meaningfully.
 
+## Sitemap Status
+
+| Date | Sitemap | Status | Discovered pages |
+| --- | --- | --- | --- |
+| 2026-06-10 | `https://prathamkadam.netlify.app/sitemap.xml` | Success | 38 |
+
+## Requested HTML Pages
+
 | Date | URL | Live test | Request indexing |
 | --- | --- | --- | --- |
 | 2026-06-10 | `https://prathamkadam.netlify.app/website-developer-ahmedabad` | Not recorded | Requested |
 | 2026-06-10 | `https://prathamkadam.netlify.app/freelance-web-developer-ahmedabad` | Not recorded | Requested |
 | 2026-06-10 | `https://prathamkadam.netlify.app/business-website-developer-ahmedabad` | URL is available to Google | Requested |
-| 2026-06-10 | `https://prathamkadam.netlify.app/nextjs-developer-india` | URL is available to Google | Failed: try again later |
-| 2026-06-10 | `https://prathamkadam.netlify.app/website-developer-for-small-business` | URL is available to Google | Failed: daily quota exceeded |
+| 2026-06-10 | `https://prathamkadam.netlify.app/nextjs-developer-india` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/website-developer-for-small-business` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/website-redesign-ahmedabad` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/contact` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/services` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/my-work` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/who-is-pratham-kadam` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/about-pratham-kadam` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/services/custom-web-application-development` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/services/ecommerce-development` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/services/website-redesign-and-seo` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/services/website-maintenance-and-support` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/global-it-computer-academy` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/gagan-belt` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/global-it-infosolution` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/balanced-behavioral-health` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/bharat-engineering-works` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/viyan-electronics` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/school-management-system` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/work/online-examination-portal` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/freelance-full-stack-developer-ahmedabad` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/business-website-cost-india` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/nextjs-good-for-seo-websites` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/website-developer-ahmedabad-cost` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/small-business-website-checklist-india` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/how-to-choose-web-developer-ahmedabad` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/website-redesign-seo-checklist` | URL is available to Google | Requested |
+| 2026-06-10 | `https://prathamkadam.netlify.app/blog/local-seo-website-ahmedabad-business` | URL is available to Google | Requested |
 
-## Retry First
+## Pending Priority HTML Pages
 
-These URLs passed live testing but still need Request indexing after quota resets.
-
-- `https://prathamkadam.netlify.app/nextjs-developer-india`
-- `https://prathamkadam.netlify.app/website-developer-for-small-business`
-
-## Pending HTML Pages
-
-- `https://prathamkadam.netlify.app/`
-- `https://prathamkadam.netlify.app/who-is-pratham-kadam`
-- `https://prathamkadam.netlify.app/about-pratham-kadam`
-- `https://prathamkadam.netlify.app/contact`
-- `https://prathamkadam.netlify.app/my-work`
-- `https://prathamkadam.netlify.app/blog`
-- `https://prathamkadam.netlify.app/services`
-- `https://prathamkadam.netlify.app/services/custom-web-application-development`
-- `https://prathamkadam.netlify.app/services/ecommerce-development`
-- `https://prathamkadam.netlify.app/services/website-redesign-and-seo`
-- `https://prathamkadam.netlify.app/services/website-maintenance-and-support`
-- `https://prathamkadam.netlify.app/work/global-it-computer-academy`
-- `https://prathamkadam.netlify.app/work/gagan-belt`
-- `https://prathamkadam.netlify.app/work/global-it-infosolution`
-- `https://prathamkadam.netlify.app/work/balanced-behavioral-health`
-- `https://prathamkadam.netlify.app/work/bharat-engineering-works`
-- `https://prathamkadam.netlify.app/work/viyan-electronics`
-- `https://prathamkadam.netlify.app/work/school-management-system`
-- `https://prathamkadam.netlify.app/work/online-examination-portal`
-- `https://prathamkadam.netlify.app/blog/freelance-full-stack-developer-ahmedabad`
-- `https://prathamkadam.netlify.app/blog/business-website-cost-india`
-- `https://prathamkadam.netlify.app/blog/nextjs-good-for-seo-websites`
-- `https://prathamkadam.netlify.app/blog/website-developer-ahmedabad-cost`
-- `https://prathamkadam.netlify.app/blog/small-business-website-checklist-india`
-- `https://prathamkadam.netlify.app/blog/how-to-choose-web-developer-ahmedabad`
-- `https://prathamkadam.netlify.app/blog/website-redesign-seo-checklist`
-- `https://prathamkadam.netlify.app/blog/local-seo-website-ahmedabad-business`
-- `https://prathamkadam.netlify.app/website-redesign-ahmedabad`
+None.
 
 ## Machine Resource URLs
 
